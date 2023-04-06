@@ -1,0 +1,27 @@
+.admin-auth-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+
+    .admin-sidebar-container {
+        width: 20%;
+        background-color: #dfe6e9;
+        height: 100vh;
+
+        .admin-sidebar-items {
+            padding: 15px 20px;
+            // background-color: chocolate;
+            border-bottom: 1px solid #b2bec3;
+            background-color: #fff;
+            font-size: 1rem;
+            font-weight: bolder;
+            display: block;
+        }
+    }
+
+    .admin-content {
+        width: 80%;
+        padding: 10px;
+    }
+}

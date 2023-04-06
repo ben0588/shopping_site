@@ -1,0 +1,190 @@
+.footer-container {
+    padding: 80px 0 0;
+    max-width: 100%;
+    width: 100%;
+    background-color: #111414;
+    color: #fff;
+
+    // 最下方非商業用途聲明
+    .footer-non-commercial-small {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #000000;
+        font-weight: bolder;
+    }
+
+    // 最底層版權區塊
+    .footer-bottom-small {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #00b894;
+        font-weight: bolder;
+    }
+
+    // 內容器
+    .footer-inner-container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 0 0 150px;
+        flex-wrap: wrap;
+
+        // 所有主標題
+        h4 {
+            font-size: 1.8rem;
+            font-weight: bolder;
+            margin: 0 0 10px;
+        }
+
+        a,
+        span {
+            color: #aaa9b5;
+        }
+
+        // 關於我們
+        .footer-about-content {
+            width: 15%;
+            margin: 0 0 10px;
+
+            @include media768 {
+                width: 50%;
+            }
+
+            .footer-about-items {
+                padding: 5px 0;
+                &:hover a,
+                &:active a {
+                    color: #00b894;
+                }
+            }
+        }
+
+        // 客戶服務
+        .footer-serve-content {
+            width: 15%;
+
+            @include media768 {
+                width: 50%;
+            }
+
+            .footer-serve-items {
+                padding: 5px 0;
+                &:hover a,
+                &:active a {
+                    color: #00b894;
+                }
+            }
+        }
+
+        // 聯絡我們
+        .footer-contact-content {
+            width: 40%;
+
+            @include media768 {
+                width: 100%;
+                padding: 50px 0;
+            }
+
+            // 每一個內容
+            .footer-contact-items {
+                padding: 5px 0;
+                &:hover a {
+                    color: #00b894;
+                }
+            }
+        }
+
+        // 社群與支付區塊
+        .media-payment-container {
+            width: 30%;
+
+            @include media768 {
+                width: 100%;
+            }
+        }
+        // 社群媒體
+        .footer-media-content {
+            display: flex;
+            padding: 10px 0 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+            // 社群icon設定
+            svg {
+                margin: 10px 10px 10px 0;
+                width: 40px;
+                height: 40px;
+                fill: #ffffff;
+                transition: fill 0.3s ease-in-out;
+            }
+
+            // 各社群icon hover 特效
+            .instagram-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #e1306c;
+                }
+            }
+            .facebook-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #1877f2;
+                }
+            }
+            .twitter-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #1da1f2;
+                }
+            }
+            .youtube-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #ff0000;
+                }
+            }
+            .twitch-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #9146ff;
+                }
+            }
+            .line-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #00c300;
+                }
+            }
+            .linkedin-link {
+                &:hover svg,
+                &:active svg {
+                    fill: #0077b5;
+                }
+            }
+        }
+
+        // 支援支付
+        .footer-payment-content {
+            width: 100%;
+            // display: flex;
+            // flex-wrap: wrap;
+            // align-items: flex-start;
+            padding: 20px 0 0;
+            position: relative;
+
+            .footer-payment-items {
+                width: 100%;
+                position: absolute;
+                left: -2%;
+                top: 100%;
+            }
+        }
+    }
+}

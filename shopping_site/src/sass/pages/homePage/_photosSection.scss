@@ -1,0 +1,118 @@
+// 最外層容器設置
+.home-photos-container {
+    // padding: 100px 0 0;
+    max-width: 100%;
+    width: 100%;
+    margin: 100px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .home-photos-title {
+        text-align: center;
+        width: 100%;
+        padding: 20px 0 30px;
+        font-size: 2.5rem;
+        font-weight: bolder;
+
+        a {
+            color: #00b894;
+        }
+
+        @include media768 {
+            width: 100%;
+            font-size: 2rem;
+        }
+
+        @include media320 {
+            font-size: 1.8rem;
+        }
+    }
+
+    // grid 底層設置
+    .home-photos-grid {
+        padding: 10px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr)); // 自適應父容器，最小跟最大
+        grid-template-rows: 200px 200px 350px; // 每行高度設定
+        gap: 10px; //  設定rows行上下距離
+        justify-content: center;
+        background-color: black;
+
+        // 設置給格位置
+        grid-template-areas:
+            'b1 b1 s1 s2'
+            'b1 b1 s3 s4'
+            's5 b2 b2 b2';
+
+        // RWD 414 後進行調整
+        @include media414 {
+            .home-photos-sm3,
+            .home-photos-sm4,
+            .home-photos-sm5 {
+                display: none;
+            }
+            // 改變最後一行高度
+            grid-template-rows: 200px 200px 200px;
+            // 改變位置配置
+            grid-template-areas:
+                'b1 b1 b1 b1'
+                's1 s1 s2 s2'
+                'b2 b2 b2 b2';
+        }
+
+        // 設定 skeleton 讀取樣式
+        .home-photos-items-skeleton {
+            width: 100%;
+            height: 100%;
+        }
+
+        // 每個區塊額外設置
+        .home-photos-items {
+            border: 2px solid rgba(255, 255, 255, 0.486);
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+
+            &:hover img,
+            &:active img {
+                transform: scale(1.1); // 圖片範圍變大
+                filter: brightness(1.1); // 圖片明亮提升
+            }
+        }
+        // 圖片設置
+        .home-photos-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: all 0.5s ease-in-out;
+            filter: brightness(0.8); // 降低圖片明亮
+            cursor: pointer;
+        }
+
+        // 每個區域命名
+        .home-photos-big1 {
+            grid-area: b1;
+        }
+        .home-photos-big2 {
+            grid-area: b2;
+        }
+        .home-photos-sm1 {
+            grid-area: s1;
+        }
+        .home-photos-sm2 {
+            grid-area: s2;
+        }
+        .home-photos-sm3 {
+            grid-area: s3;
+        }
+        .home-photos-sm4 {
+            grid-area: s4;
+        }
+        .home-photos-sm5 {
+            grid-area: s5;
+        }
+    }
+}

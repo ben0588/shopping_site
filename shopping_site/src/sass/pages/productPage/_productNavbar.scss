@@ -1,0 +1,171 @@
+// 上方當前訪問導覽列 + 搜尋框
+.product-navbar-container {
+    width: 100%;
+    padding: 20px 0;
+    // background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // background-color: #636e72;
+
+    // 當前目錄
+    .product-navbar-content {
+        // background-color: cornsilk;
+        font-size: 1rem;
+        @include media768 {
+            margin: 0 0 10px;
+            width: 100%;
+        }
+
+        // 子目錄各自單一選項
+        .product-navbar-items {
+            display: inline-block;
+            position: relative;
+            max-width: 150px;
+            margin: 0 10px 0 0;
+            font-weight: bolder;
+
+            @include media375 {
+                margin: 0 5px 0 0;
+                font-size: 0.9rem;
+            }
+
+            &:hover {
+                color: #00b894;
+            }
+        }
+
+        // 種類為 Search 特定樣式
+        .product-navbar-search {
+            display: inline-block;
+            position: relative;
+            max-width: 150px;
+            margin: 0 10px 0 5px;
+            font-weight: bolder;
+            cursor: context-menu; // 改回基本
+
+            // 內層 清除 x icon 樣式
+            .product-navbar-close-icon {
+                width: 23px;
+                height: 23px;
+                position: absolute;
+                right: -18%;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+
+                &:hover,
+                &:active {
+                    fill: #b80012;
+                }
+            }
+        }
+
+        // 類型 & 子類型 項目
+        .product-navbar-category,
+        .product-navbar-subcategory {
+            padding: 0 0 0 20px;
+            &:after {
+                content: '/';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #000;
+            }
+
+            @include media375 {
+                padding: 0 0 0 10px;
+            }
+        }
+    }
+
+    // 搜尋框容器
+    .product-search-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-weight: bolder;
+        position: relative;
+        flex-wrap: wrap;
+
+        @include media768 {
+            width: 100%;
+            justify-content: flex-start;
+        }
+
+        @include media568 {
+            width: 98%;
+            justify-content: flex-start;
+            border: 1px solid #dfe6e9;
+            padding: 10px 0;
+            margin: 10px 0 0;
+        }
+
+        // 搜尋 label
+        .product-search-label {
+            // background-color: #dfe6e9;
+            font-size: 1rem;
+
+            @include media568 {
+                width: 20%;
+                margin-left: 5px;
+            }
+
+            @include media375 {
+                display: none;
+            }
+        }
+
+        // 搜尋 input
+        .product-search-input {
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 2px solid #636e72;
+
+            @include media568 {
+                width: 50%;
+                display: inline;
+                margin: 0 5px;
+                // margin-left: -11%;
+                // margin-top: 2%;
+            }
+
+            &:focus,
+            &:active {
+                outline: none;
+                border: 2px solid black;
+                box-shadow: 0 0 10px black;
+            }
+        }
+
+        // 搜尋 icon
+        .product-search-icon {
+            width: 20px;
+            height: 20px;
+            margin: 0 10px 0 10px;
+            cursor: pointer;
+            display: inline-block;
+
+            @include media568 {
+                margin: 0 0 0 20px;
+            }
+        }
+
+        // 選單 icon
+        .product-menu-icon {
+            width: 25px;
+            height: 25px;
+            margin: 0 20px 0 0;
+            cursor: pointer;
+            display: none;
+            display: inline-block;
+
+            @include media568 {
+                margin: 0 0 0 10px;
+            }
+        }
+    }
+}

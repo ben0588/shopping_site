@@ -1,0 +1,81 @@
+// 需安裝套件
+// npm install sass
+
+// (1)安裝VS code套件
+// 搜尋:Live Sass Compile
+// 點擊最下方狀態列中 Watch Sass 保持即時更新,若不需要則再次點擊
+
+// # scss 主要可以利用巢狀結構，不用每段前面都要加主 class 名稱，但要加上 {} 中括號 跟; 進行撰寫
+// # sass 一樣保留朝狀結構，且與scss不用多; {} 符號，但是要注意格式，以一個 tab 或 2個空白進行縮排
+
+// 可以新增變數，用來設定全域屬性，比如連結顏色 linkColor ， 在最一開始可以新增變數 $linkColor
+// 這樣未來在一次更改時就可以全部調整色系。也支持 * 加減乘除。詳情查看 _base.scss 全域設定
+
+// @import 不用加上_檔案前墜、.scss副檔名。會預設去抓取同層的目錄檔案名。#載入有看順序#。請注意
+
+// abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
+// 使用 @mixin 建立名稱後 在對應處區使用 @include 引用用即可。也可以帶入變數去使用 ($items,$items)
+// @import 'abstracts/variables'
+@import 'abstracts/mixin';
+
+// base 全域設定 (_reset清除瀏覽器格式、_typography全站設定)
+@import 'base/reset';
+@import 'base/typography';
+
+// layout 共同框架 ( _navigation導覽列、 _grid斷點、_header、_main、_footer、_sidebar、_forms)
+@import 'layout/media';
+@import 'layout/main';
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/banner';
+@import 'layout/footer';
+
+// components 元件 / module 模組 (_buttons按鈕、_carousel輪播、_form表單、_table表格)
+@import 'components/buttons';
+@import 'components/icon';
+@import 'components/logo';
+
+// pages 各頁內容 (_index/_home首頁格式、_pages/index、_pages1、_pages2)
+@import 'pages/homePage/home';
+@import 'pages/homePage/sellingSection';
+@import 'pages/homePage/hotSection';
+@import 'pages/homePage/photosSection';
+@import 'pages/homePage/newProduct';
+@import 'pages/homePage/newInfoSection';
+@import 'pages/homePage/brand';
+
+@import 'pages/userPage/forget';
+@import 'pages/userPage/newPassword';
+@import 'pages/userPage/editPassword';
+@import 'pages/userPage/error';
+@import 'pages/userPage/login';
+@import 'pages/userPage/register';
+@import 'pages/userPage/info';
+@import 'pages/userPage/infoEditForm';
+
+@import 'pages/productPage/productHome';
+@import 'pages/productPage/productSidebar';
+@import 'pages/productPage/productMenu';
+@import 'pages/productPage/productCard';
+@import 'pages/productPage/productNavbar';
+@import 'pages/productPage/productPagination';
+@import 'pages/productPage/productAdvertise';
+@import 'pages/productPage/productInfoSection';
+@import 'pages/productPage/productAdditionalInfoSection';
+
+@import 'pages/shoppingPage/shopping';
+@import 'pages/shoppingPage/shoppingNavbar';
+@import 'pages/shoppingPage/shoppingCart';
+@import 'pages/shoppingPage/shoppingPayment';
+@import 'pages/shoppingPage/shoppingOrders';
+
+@import 'pages/adminPage/admin';
+@import 'pages/adminPage/adminLogin';
+@import 'pages/adminPage/adminAuth';
+@import 'pages/adminPage/adminProducts';
+@import 'pages/adminPage/adminAdd';
+
+// themes 主題 #很少用(_theme主題)
+
+// vendors 第三方套件樣式
+@import 'vendors/gsap';

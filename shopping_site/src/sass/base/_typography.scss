@@ -1,0 +1,32 @@
+/*  運行盒模型，依照box的width固定寬度，padding、border都會往內推，內容不會超出自身的外框
+    *號代表所有html標籤(可以加入)  */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 將所有 a連結下底線樣式清除 */
+a {
+    // color: #00b894;
+    text-decoration: none;
+    text-decoration-color: none;
+    &:visited,
+    &:link {
+        color: inherit; // 繼承父層所指定的顏色
+        text-decoration: none;
+        background-color: none;
+    }
+}
+
+/* 寫響應式圖片記得要加max-width，再不同裝置上圖片都會自適應，可以讓圖片解析度保持最好
+       維持原圖大小，避免失真情況發生，若使用 width:100% 依照底層寬度則可能出現失真*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 線搞(排錯用，不使用要關掉) */
+// * {
+//     outline: 1px solid rgb(255, 0, 0);
+// }

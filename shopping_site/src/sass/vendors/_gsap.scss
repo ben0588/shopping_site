@@ -1,0 +1,12 @@
+// 光標樣式設定
+.cursor {
+    display: inline-block;
+    &:before {
+        content: '';
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        position: absolute;
+        bottom: 25%;
+    }
+}

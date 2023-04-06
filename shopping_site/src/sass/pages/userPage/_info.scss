@@ -1,0 +1,52 @@
+.user-info-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    // 內區塊設定
+    .user-info-inner-container {
+        max-width: 1024px;
+        width: 80%;
+        margin: 50px auto;
+        border: 2px solid black;
+
+        @include media768 {
+            width: 90%;
+        }
+
+        @include media568 {
+            width: 95%;
+        }
+
+        // 上方導覽選單
+        .user-info-navbar {
+            width: 100%;
+            position: relative;
+
+            // 導覽內區塊(ul)
+            .user-info-inner-navbar {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                border-collapse: collapse;
+                position: relative;
+
+                // 導覽每個選項設定(li)
+                .user-info-navbar-items {
+                    // 每個按鈕設定
+                    .user-info-navbar-text {
+                        display: inline-block;
+                        width: 100%;
+                        height: auto;
+                        padding: 15px 0;
+                        text-align: center;
+
+                        @include media320 {
+                            font-size: 0.8rem; // 調整小選單字形
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

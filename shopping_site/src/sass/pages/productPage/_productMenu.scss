@@ -1,0 +1,32 @@
+.product-menu-container {
+    // width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    // touch-action: none;
+    // display: none;
+    // width: 0;
+    display: flex;
+    transition: all 0.3s ease-in;
+    width: 100%;
+
+    // 左側選單
+    .product-sidebar-container {
+        // width: 50%;
+
+        .product-sidebar-inner {
+            overflow-y: scroll; // 新增下拉式
+            height: 100vh;
+            // width: 50%;
+        }
+    }
+
+    // 用來點選關閉選單的
+    .product-menu-toggle {
+        width: 50%;
+        height: 100vh;
+    }
+}

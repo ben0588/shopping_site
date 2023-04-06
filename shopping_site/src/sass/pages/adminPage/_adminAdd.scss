@@ -1,0 +1,182 @@
+.admin-add-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.315);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .admin-add-form {
+        background-color: #fff;
+        max-width: 50%;
+        width: 50%;
+        margin: auto;
+        padding: 50px;
+        position: relative;
+
+        .admin-add-close {
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            &:hover,
+            &:active {
+                fill: #b80012;
+            }
+        }
+
+        .admin-add-title {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            border-bottom: 2px solid black;
+            width: 100%;
+            padding: 5px 0 10px;
+            margin: 0 0 10px;
+            user-select: none;
+        }
+
+        label {
+            display: inline-block;
+            max-width: 50%;
+            width: 50%;
+            // font-size: 1.2rem;
+            // font-weight: bolder;
+            margin: 5px 0;
+        }
+
+        input {
+            display: inline-block;
+            max-width: 50%;
+            width: 50%;
+            padding: 2px 5px;
+            // font-size: 1rem;
+            margin: 0 0 5px;
+        }
+        input[type='file'] {
+            padding: 0;
+        }
+
+        select {
+            padding: 5px;
+            margin: 0 0 5px;
+            width: 25%;
+        }
+
+        textarea {
+            max-width: 100%;
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        .admin-add-subcategory-label {
+            display: inline;
+        }
+        .admin-add-size-input,
+        .admin-product-price-input {
+            width: 25%;
+        }
+        .admin-product-price-label {
+            display: inline;
+        }
+
+        // 尺寸與庫存區塊
+        .admin-add-size-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+
+            // 新增 icon
+            .admin-add-size-icon {
+                position: absolute;
+                top: 30%;
+                right: -23%;
+                transform: translateY(-30%);
+                width: 25px;
+                height: 25px;
+                cursor: pointer;
+                &:hover,
+                &:active {
+                    fill: #00b894;
+                }
+            }
+        }
+
+        .admin-added-text {
+            display: inline-block;
+            margin: 0 10px 0 0;
+            // display: flex;
+            // align-items: center;
+            position: relative;
+
+            .admin-added-cancel {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                &:hover,
+                &:active {
+                    fill: #b80012;
+                }
+            }
+        }
+
+        .admin-add-enabled-container {
+            margin: 10px 0;
+
+            label,
+            input {
+                display: inline;
+                width: auto;
+                margin: 0 5px 0 0;
+            }
+        }
+
+        .admin-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 5px;
+            // margin: 0 10px;
+        }
+
+        .admin-add-submit {
+            // width: 50%;
+            width: 100px;
+            height: 30px;
+            margin: 0 5px 0 0;
+            background-color: #00b894;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            cursor: pointer;
+            &:hover {
+                background-color: #fff;
+                color: #00b894;
+            }
+        }
+
+        .admin-add-cancel {
+            // width: 50%;
+            width: 100px;
+            height: 30px;
+            padding: 5px;
+            margin: 0;
+            background-color: #fff;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bolder;
+            cursor: pointer;
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}

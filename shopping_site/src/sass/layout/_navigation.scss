@@ -1,0 +1,313 @@
+// ---- navbar start ----
+
+$test: 0;
+// navbar外容器
+.navbar-container {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    margin: 0 auto;
+
+    // navbar容器內距離
+    .navbar-inner-container {
+        max-width: 100%;
+        width: 70%;
+        margin: 0 auto;
+        // height: auto;
+        height: 55px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        @include media768 {
+            width: 90%;
+            height: auto;
+        }
+        @include media568 {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    // navbar內容(ui)
+    .navbar-content {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        // overflow: hidden;
+
+        // 設定在568時顯示滿版，且隱藏在畫面外，透過點擊新增className讓選單從外面外動畫回來
+        @include media568 {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            right: -110%;
+            top: 0;
+            z-index: 30;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: center;
+
+            // RWD時不顯示選單後的 | 符號
+            li:nth-of-type(1)::after {
+                content: '';
+            }
+            li:nth-of-type(2)::after {
+                content: '';
+            }
+            li:nth-of-type(3)::after {
+                content: '';
+            }
+            li:nth-of-type(4)::after {
+                content: '';
+            }
+        }
+    }
+
+    // navbar 每個選單範圍
+    .navbar-items {
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        @include media568 {
+            width: 100%;
+            height: 60px;
+            flex-direction: column;
+            cursor: pointer;
+            border-bottom: 2px solid #dfe6e9;
+        }
+
+        // 製作選單底層流光
+        &::before {
+            content: '';
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 0;
+            width: 0;
+            border-bottom: 3px solid #00b894;
+            transition: all 0.5s ease;
+        }
+
+        // 移動或點擊時增加寬度
+        &:hover::before {
+            width: 80%;
+        }
+        &:active::before {
+            width: 80%;
+            border-bottom: 3px solid #4a3ac2;
+        }
+
+        // 調整 RWD顯示時底下顏色條長度，不要太長
+        @include media568 {
+            &:hover::before {
+                width: 20%;
+            }
+            &:active::before {
+                width: 20%;
+                border-bottom: 3px solid #4a3ac2;
+            }
+        }
+
+        // 超連結 文字區塊設定
+        .navbar-items-text {
+            padding: 25px 15px;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                color: #00b894 !important;
+            }
+
+            &:active {
+                color: #4a3ac2 !important;
+            }
+        }
+
+        // 全部商品標籤
+        .product-all-items {
+            padding: 0;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+
+            &:hover {
+                color: #00b894;
+            }
+        }
+    }
+
+    // 箭頭朝下的 icon
+    .product-type-icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin: 0 0 0 5px;
+    }
+}
+
+// 選單打開跟離開按鈕樣式，因為主題色用style方式。。所以用!important
+.header-menu-open,
+.header-menu-leave {
+    width: 40px;
+    height: 40px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+        fill: #00b894 !important;
+    }
+    &:active {
+        fill: #4a3ac2 !important;
+    }
+}
+
+// 打開選單預設隱藏，568才顯示
+.header-menu-open {
+    display: none;
+    @include media568 {
+        display: inline-block;
+        position: absolute;
+        right: 5%;
+    }
+}
+
+// 關閉按鈕預設隱藏，568才顯示
+.header-menu-leave {
+    display: none;
+    @include media568 {
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        z-index: 30;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+    }
+
+    @include media414 {
+        position: absolute;
+        top: 2%;
+    }
+
+    @include media375 {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+// ---- navbar end ----
+
+// 顯示選單用
+.showMenu {
+    right: 0 !important;
+}
+
+// 下方整版式的導覽列
+.product-type-container {
+    width: 100%;
+    height: 300px;
+    background-color: #111414;
+    // background-color: #fff;
+    // background-color: #00b894;
+    color: #fff;
+    position: absolute;
+    top: 100%; // 貼齊接縫，如果調整會導致畫面閃爍 (移動太慢才會閃爍)
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+    border-bottom: 2px solid black;
+    font-size: 1.1rem;
+    // display: none;
+
+    // 手機板不顯示菜單
+    @include media568 {
+        display: none !important;
+    }
+
+    // 全部商品標題
+    .product-type-title {
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            color: #4a3ac2;
+        }
+    }
+
+    // 每個 ul 選單
+    .product-rackets-menu,
+    .product-strings-menu,
+    .product-balls-menu,
+    .product-accessories-menu,
+    .product-clothes-menu,
+    .product-shoes-menu,
+    ul {
+        margin: 0 40px;
+
+        @include media1140 {
+            margin: 0 30px;
+        }
+
+        @include media768 {
+            margin: 0 8px;
+        }
+
+        // 每個 h3 標題
+        h3 {
+            font-size: 1.5rem;
+            margin: 0 0 15px;
+            &:hover {
+                color: #4a3ac2;
+            }
+        }
+
+        // 每個 li 區塊設定
+        li {
+            // font-weight: 200;
+            font-size: 1rem;
+            margin: 0 0 10px;
+
+            // 每個連結區塊設定
+            a {
+                &:hover {
+                    color: #00b894;
+                }
+            }
+        }
+    }
+}
+
+// 要控制不同父子層則使用 has 來控制 hover (hover只能在父&子層才可以控制)
+// body:has(.product-all-items:hover) .product-type-container {
+//     // display: none;
+//     display: flex;
+//     // visibility: visible;
+//     // position: relative;
+
+//     // display: flex ;
+//     // position: absolute;
+// }
+
+// body:not(.navbar-items:hover) .product-type-container {
+//     display: flex !important;
+//     // position: absolute;
+// }

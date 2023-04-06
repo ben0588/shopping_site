@@ -1,0 +1,129 @@
+// 下方附加信息容器
+.product-additionalInfo-container {
+    margin: 100px 0 0;
+    padding: 0 0 100px;
+    width: 100%;
+
+    @include media568 {
+        margin: 50px 0 0;
+        padding: 0 0 20px;
+    }
+
+    // 導覽列樣式
+    .product-additionalInfo-navbar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        // 下方水平線樣式
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #dfe6e9;
+        }
+
+        // 每個導覽列樣式
+        .product-additionalInfo-items {
+            display: inline-block;
+            width: calc(100% / 3 - 5px);
+            margin: 0 10px;
+            // background-color: cadetblue;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: bolder;
+        }
+    }
+
+    // 商品描述區塊樣式
+    .product-describe-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+
+        // 商品描述標題
+        .product-describe-title {
+            font-size: 1.5rem;
+            font-weight: bolder;
+            position: relative;
+            display: inline-block;
+            padding: 0 0 10px;
+            margin: 0 0 50px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 3px;
+                background-color: #00b894;
+            }
+        }
+
+        // 商品描述圖片
+        .product-describe-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+            border: 2px solid black;
+            display: block;
+            margin: 0 0 20px;
+        }
+
+        // img 替換的 skeleton 樣式
+        .img-container-skeleton {
+            width: 100%;
+            height: 100vh;
+        }
+    }
+
+    // 送貨及付款方式樣式
+    .product-method-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 50px 0;
+        text-align: center;
+
+        .product-method-content {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .product-method-delivery,
+            .product-method-payment {
+                position: relative;
+                h3 {
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                    position: relative;
+                    display: inline-block;
+                    padding: 0 0 10px;
+                    margin: 0 0 25px;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 100%;
+                        height: 3px;
+                        background-color: #00b894;
+                    }
+                }
+            }
+        }
+    }
+}

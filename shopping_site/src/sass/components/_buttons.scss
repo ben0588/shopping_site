@@ -1,0 +1,44 @@
+// 切換主題按鈕
+.themeButton {
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: coral;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: bisque;
+    }
+}
+
+// 首頁快速回到頂部按鈕
+.goTop-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 30;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    // background-color: #00b893be;
+    background-color: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(5px);
+    font-weight: bolder;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    // 手機板不顯示此功能
+    @include media568 {
+        display: none;
+    }
+}

@@ -1,0 +1,40 @@
+// 下方頁數導覽列
+.product-content-pagination {
+    width: 100%;
+    // background-color: rgb(116, 116, 214);
+    padding: 10px 0;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // 每個分頁按鈕樣式
+    .product-pagination-items {
+        display: inline-block;
+        width: 35px;
+        background-color: #dfe6e9;
+        padding: 10px;
+        margin: 0 5px;
+        font-weight: bolder;
+        user-select: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(0.8);
+            // background-color: #636e72 !important;
+        }
+    }
+
+    // 左右兩側箭頭按鈕樣式
+    .product-pagination-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            fill: #636e72;
+        }
+    }
+}

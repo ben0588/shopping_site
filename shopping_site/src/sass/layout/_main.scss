@@ -1,0 +1,10 @@
+.layout-main-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 93px 0 0;
+
+    @include media568 {
+        padding: 87px 0 0;
+    }
+}

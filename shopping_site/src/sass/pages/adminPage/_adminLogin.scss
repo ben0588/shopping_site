@@ -1,0 +1,52 @@
+.admin-login-container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1024px;
+    height: auto;
+    padding: 100px 0 0;
+
+    .admin-login-form {
+        width: 50%;
+        margin: 0 auto;
+        padding: 50px 20px;
+        // background-color: aqua;
+        // border: 2px solid black;
+
+        .admin-login-title {
+            font-size: 2rem;
+            font-weight: bolder;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0 0 20px;
+            border-bottom: 2px solid #00b894;
+        }
+
+        .login-error-container {
+            // border: 2px solid #b00020;
+            color: #b00020;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8a5c2;
+            font-weight: bolder;
+            display: none;
+            margin: 0 0 15px;
+        }
+
+        .login-error-open {
+            display: block;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1rem;
+            font-weight: bolder;
+        }
+        input[type='text'],
+        input[type='password'] {
+            margin: 0 0 10px;
+            padding: 5px;
+            width: 100%;
+        }
+    }
+}

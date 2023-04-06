@@ -1,0 +1,277 @@
+// 右側商品卡片顯示區塊
+.product-content-all {
+    width: 100%;
+    // padding: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+
+    // 商品卡片容器
+    .product-card-container {
+        // width: calc(100% / 4 - 12px); // calc 分割 3 欄位 並扣20px (讓margin 20px)
+        width: calc(100% / 4 - 10px); // calc 分割 4 欄位 並扣12px (讓margin 12px)
+        // margin: 0 12px 0 0;
+        // margin: 0 6px 12px;
+        margin: 0 5px 20px;
+        // max-height: 400px;
+        height: auto;
+        border: 2px solid #dfe6e9;
+        box-shadow: 0 0 5px #dfe6e9;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+
+        @include media768 {
+            width: calc(100% / 3 - 10px);
+        }
+        @include media568 {
+            width: calc(100% / 2 - 10px);
+        }
+        @include media375 {
+            width: calc(100% / 1 - 10px);
+        }
+
+        // 商品圖片容器
+        .product-card-imgContainer {
+            width: 100%;
+            height: 200px;
+            overflow: hidden; // 防止圖片放大動畫突出區塊
+            position: relative;
+
+            // 商品圖片
+            .product-card-img {
+                width: 100%;
+                height: 200px;
+                object-fit: contain;
+                object-position: center;
+                display: block;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.1); // 放大
+                    filter: brightness(1.07); // 變亮
+                }
+            }
+
+            &:hover + .product-card-name {
+                padding: 15px 15px 10px 50px;
+                &::before {
+                    // width: 20px;
+                    opacity: 1;
+                    left: 10%;
+                }
+            }
+        }
+
+        // 商品名稱
+        .product-card-name {
+            padding: 15px 15px 10px 15px;
+            margin: 0 auto 10px;
+            width: 100%;
+            // background-color: cornflowerblue;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bolder;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            // 限制文字長度一行，多出的會以...顯示
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+
+            &::after {
+                content: '';
+                width: 85%;
+                height: 2px;
+                background-color: #00b894;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            // 前方 -- 顯示的樣式
+            &::before {
+                content: '';
+                width: 20px;
+                height: 5px;
+                background-color: #00b894;
+                box-shadow: 0 0 5px #00b094;
+                position: absolute;
+                top: 59%;
+                left: -3%;
+                transform: translateY(-59%);
+                transition: all 0.3s ease-in-out;
+                opacity: 0;
+            }
+        }
+
+        // 商品介紹
+        .product-card-info {
+            width: 100%;
+            background-color: rgb(45, 82, 151);
+            text-align: center;
+        }
+
+        // 商品類型區塊
+        .product-card-typeContainer {
+            width: 70%;
+            // background-color: rgb(123, 167, 248);
+            // border-radius: 5px;
+            user-select: none;
+            padding: 0 0 0 15px;
+            margin: 0 0 15px;
+
+            @include media768 {
+                width: 100%;
+                padding: 0 5px 0 5px;
+            }
+
+            // 主類型 & 子類型 樣式
+            .product-card-type,
+            .product-card-subType {
+                // display: inline-block;
+                width: 100%;
+                display: inline-block;
+                text-align: center;
+                padding: 5px;
+                margin: 5px 5px 0 0;
+                font-size: 1rem;
+                font-weight: bolder;
+                border: 2px solid #dfe6e9;
+                white-space: nowrap;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                // max-width: 100%;
+            }
+        }
+
+        // 商品價格
+        .product-card-price {
+            width: 100%;
+            // background-color: rgb(62, 212, 87);
+            text-align: center;
+            padding: 20px 20px 5px;
+            font-size: 1rem;
+            // font-weight: bolder;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+
+            .title {
+                font-weight: bolder;
+            }
+            .price {
+                font-style: italic;
+                color: #636e72;
+            }
+        }
+
+        // 商品特價
+        .product-card-offPrice {
+            width: 100%;
+            text-align: center;
+            padding: 0 20px 5px;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title {
+                font-weight: bolder;
+            }
+            .price {
+                font-style: italic;
+                color: #636e72;
+            }
+        }
+
+        // 加入購物車按鈕
+        .product-card-addCart {
+            width: 100%;
+            // background-color: #00b094;
+            background-color: #dfe6e9;
+            // color: #fff;
+            cursor: pointer;
+            padding: 8px 0;
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            font-weight: bolder;
+            // position: absolute;
+            // bottom: 0;
+
+            border: none;
+            // border-radius: 5px;
+
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #00b094;
+                color: #fff;
+            }
+        }
+
+        // 加入願望清單按鈕區塊
+        /*
+            製作方式:
+                1、建立一個區塊放兩個icon
+                2、此區塊hover時，隱藏第一個，顯示第二個
+        */
+        .product-wish-icons {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            // 滑鼠懸停時隱藏無實心樣式
+            &:hover .product-wish-before {
+                display: none;
+            }
+            // 紅色愛心預設隱藏
+            .product-wish-after {
+                display: none;
+                fill: #b80012;
+            }
+            // 滑鼠懸停時顯示的紅色愛心
+            &:hover .product-wish-after {
+                display: inline-block;
+            }
+
+            // 當願望清單有就保持亮起的樣式
+            .wish-open {
+                display: inline-block;
+            }
+
+            // 當願望清單有就隱藏初始的樣式
+            .wish-hidden {
+                display: none;
+            }
+        }
+
+        // 新產品標籤
+        .product-card-new {
+            display: inline-block;
+            width: 50px;
+            height: 22px;
+            background-color: #b80012;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bolder;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            padding: 5px;
+            user-select: none; // 文字不可以選取
+        }
+    }
+}

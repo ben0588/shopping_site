@@ -1,0 +1,45 @@
+// 使用 @mixin 建立名稱後 在對應處區使用 @include 引用用即可。也可以帶入變數去使用 ()
+
+// 圖片取代文字技巧
+@mixin hide-text {
+    text-indent: 110%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+// 水平垂直置中方式
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// 帶入參數技巧 ()
+@mixin circle($size, $bgColor) {
+    border-radius: 50%;
+    height: $size;
+    width: $size;
+    background-color: $bgColor;
+    font-size: calc($size / 3);
+}
+// 使用偽元素技巧
+@mixin clearfix {
+    &::after {
+        content: '';
+        width: 200px;
+        height: 5px;
+        background-color: #e6fc27;
+    }
+}
+
+// @mixin創建動畫參數(動畫名稱,動畫持續時間,動畫方式,動畫延遲時間)
+// @include animate(logoHover, 1s, linear, 0s);
+@mixin animate($animation, $duration, $method, $times) {
+    animation: $animation $duration $method $times;
+}
+
+// 設定 keyframes動畫 (名稱) { 0%{}50%{}100%{} }
+// @include keyframes(logoHover){content}
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}

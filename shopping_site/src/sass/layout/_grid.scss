@@ -1,0 +1,7 @@
+// grid 設定斷點，這邊的 @content，代表的是，如果有設定其他東西，將會帶入裡面進行編譯
+
+@mixin media-medium {
+    @media (max-width:768px){
+        @content
+    }
+}

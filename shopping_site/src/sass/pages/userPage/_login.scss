@@ -1,0 +1,352 @@
+.user-login-container {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    // 內容器
+    .user-login-content {
+        max-width: 800px;
+        width: 100%;
+        padding: 100px 25px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // 表單容器
+        .user-login-form {
+            padding: 50px 50px;
+            width: 55%;
+            background-color: #fff;
+            height: auto;
+            border: 2px solid #00b894;
+            border-radius: 5px;
+            filter: drop-shadow(5px 5px 4px #5e5e5e);
+
+            @include media568 {
+                width: 100%;
+            }
+
+            @include media375 {
+                padding: 50px 10px;
+            }
+            // 表單標題
+            .user-login-title {
+                font-size: 2.3rem;
+                font-weight: bolder;
+                padding: 10px 0;
+                margin: 0 0 30px;
+                text-align: center;
+                // color: #00b894;
+                color: #000;
+                border-radius: 5px;
+                position: relative;
+            }
+
+            // 標籤屬性
+            label {
+                display: block;
+                padding: 10px 0 5px;
+                font-size: 1.2rem;
+            }
+
+            // 輸入框
+            input[type='text'],
+            input[type='password'] {
+                padding: 10px 0 10px 40px;
+                width: 100%;
+                border-radius: 5px;
+                border: 2px solid #636e72;
+                margin: 0 0 5px;
+
+                &:focus {
+                    outline: none !important;
+                    border: 2px solid #000000 !important;
+                    box-shadow: 0 0 10px #000000 !important;
+                }
+                &:active {
+                    outline: none !important;
+                    border: 2px solid #000000 !important;
+                    box-shadow: 0 0 10px #000000 !important;
+                }
+            }
+
+            // 驗證通過時顯示
+            .inputValid {
+                outline: none !important;
+                border: 2px solid #00b894 !important;
+                box-shadow: 0 0 5px #00b894;
+            }
+
+            //  驗證不通過時顯示
+            .inputInvalid {
+                outline: none !important;
+                border: 2px solid #b00020 !important;
+                box-shadow: 0 0 5px #b00020;
+            }
+
+            // 下方提示文字
+            .login-notice {
+                display: block;
+                padding: 30px 0 0;
+                color: #b00020;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            // 驗證不通過時的文字提示樣式
+            .inputInvalidText {
+                color: #b00020;
+                font-weight: bolder;
+            }
+
+            // 改變核選時樣式
+            input[type='checkbox'] {
+                // accent-color: #00b894;
+                // filter: invert(100%) hue-rotate(18deg) brightness(1.7);
+                transform: scale(1.5);
+                margin: 0 10px;
+                filter: hue-rotate(300deg);
+            }
+
+            // 浮水印字型大小
+            input::placeholder {
+                font-size: 0.9rem;
+                // font-weight: bolder;
+            }
+
+            // 登入帳號標籤
+            .login-label-userEmail {
+                position: relative;
+                // 郵箱 icon
+                .email-icon {
+                    position: absolute; // 調整位置
+                    top: 160%;
+                    left: 5%;
+                    width: 20px;
+                    height: 20px;
+                    fill: #636e72;
+                }
+            }
+
+            // 密碼登入標籤
+            .login-label-userPassword {
+                position: relative;
+                // 郵箱 icon
+                .key-icon {
+                    position: absolute; // 調整位置
+                    top: 160%;
+                    left: 5%;
+                    width: 20px;
+                    height: 20px;
+                    fill: #636e72;
+                }
+
+                // 打開顯示密碼 icon & 關閉密碼顯示 icon
+                .eye-open-icon,
+                .eye-hidden-icon {
+                    position: absolute; // 調整位置
+                    top: 160%;
+                    right: 5%;
+                    width: 20px;
+                    height: 20px;
+                    fill: #636e72;
+                }
+
+                // 顯示icon預設是隱藏的
+                .eye-open-icon {
+                    display: none;
+                }
+
+                // 用來切換隱藏顯示的class
+                .eye-hidden {
+                    display: none;
+                }
+                .eye-open {
+                    display: block;
+                }
+            }
+
+            // 保持登入
+            .user-login-keep {
+                padding: 9px 5px 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+                position: relative;
+
+                label {
+                    display: inline-block;
+                    padding: 0; // 貼齊水平
+                    font-size: 1rem;
+                }
+                input {
+                    margin-left: 0;
+                }
+
+                // 忘記密碼
+                .user-login-forget {
+                    display: block;
+                    position: absolute;
+                    right: 0;
+                    text-align: right;
+                    font-size: 1rem;
+                    transition: color 0.3s ease-in-out;
+                    font-weight: bolder;
+                    text-decoration: dashed;
+
+                    &:hover {
+                        color: #b80012;
+                    }
+                }
+            }
+
+            // 第三方登入標題
+            .user-third-title {
+                // width: 100%;
+                // background-color: antiquewhite;
+                text-align: center;
+                margin: 35px 0 0;
+                font-size: 1rem;
+                position: relative;
+
+                // 左右兩條--樣式
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 45%;
+                    height: 2px;
+                    background-color: #636e72d7;
+                }
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    width: 45%;
+                    height: 2px;
+                    background-color: #636e72d7;
+                }
+            }
+
+            // 第三方登入容器
+            .user-third-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 0;
+
+                // 每個容器間距
+                .user-third-items {
+                    margin: 0 8px;
+                    width: 44px;
+                    height: 44px;
+                    border: 2px solid rgba(0, 0, 0, 0.712);
+                    border-radius: 5px;
+                    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.74);
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include media568 {
+                        margin: 0 5px;
+                    }
+
+                    @include media375 {
+                        margin: 0 1px;
+                    }
+
+                    &:hover {
+                        outline: none !important;
+                        border: 2px solid #00b894;
+                        box-shadow: 0 0 10px #25dab5;
+                    }
+
+                    // logo img
+                    img {
+                        padding: 5px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    // google 的按鈕
+                    .googleLogin {
+                        display: block;
+                        padding: 5px;
+                        width: 55px !important;
+                        height: 50px !important;
+                        img {
+                            opacity: 0;
+                        }
+                        // svg {
+                        //     width: 300px !important;
+                        //     height: 300px !important;
+                        // }
+                    }
+                }
+            }
+
+            // 登入按鈕
+            .user-submit-btn {
+                margin: 20px 0 0;
+                width: 100%;
+                color: #fff;
+                height: 40px;
+                padding: 5px 0;
+                font-size: 1.2rem;
+                font-weight: bolder;
+                background-color: #00b894;
+                border: 2px solid black;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                // 選取特效
+                &:hover {
+                    outline: none !important;
+                    border: 2px solid #00b894;
+                    box-shadow: 0 0 10px #25dab5;
+                }
+                &:active {
+                    outline: none !important;
+                    border: 2px solid #00b894;
+                    box-shadow: 0 0 10px #25dab5;
+                }
+            }
+
+            // 註冊提示
+            .user-login-register {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 20px 0 0;
+                text-align: center;
+
+                // 註冊連結
+                .user-go-register {
+                    padding: 0 10px;
+                    color: #00b894;
+                    font-size: 1.2rem;
+                    font-weight: bolder;
+                    transition: color 0.3s ease-in-out;
+
+                    &:hover {
+                        color: #b80012;
+                    }
+                    &:active {
+                        color: #b80012;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+// 左側欄位 (選取菜單)
+.product-sidebar-container {
+    width: 20%;
+    min-height: 500px;
+    height: 100%;
+    // padding: 50px 10px 0;
+    // background-color: blueviolet;
+    background-color: #fff;
+
+    @include media568 {
+        // display: none;
+        // 改用 styled 方式進行隱藏，用參數進行開關
+    }
+
+    // nav 標籤層
+    .product-sidebar-menu {
+        width: 100%;
+        padding: 0 0 10px;
+        // nav 內層區塊 ul
+        .product-sidebar-inner {
+            // 全部商品 大標題
+            .product-sidebar-title {
+                // background-color: #c42d2d;
+                width: 100%;
+                cursor: pointer;
+                padding: 8px 10px;
+                outline: none;
+                border: none;
+                text-align: left;
+                font-size: 1.8rem;
+                font-weight: bolder;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 0 5px;
+
+                .product-title-icon {
+                    height: 25px;
+                    width: 25px;
+                }
+            }
+            // 每個選單按鈕區塊 li
+            .product-sidebar-items {
+                // border-top: 1px solid #dfe6e9;
+                position: relative;
+                padding: 10px 0;
+
+                // 上方的格線樣式
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: #dfe6e9;
+                    // width: 85%;
+                    width: 95%;
+                    height: 2px;
+                }
+
+                // 主種類按鈕樣式
+                .product-sidebar-btn {
+                    background-color: #fff;
+                    width: 100%;
+                    cursor: pointer;
+                    // padding: 5px 10px;
+                    outline: none;
+                    border: none;
+                    text-align: left;
+                    font-size: 1rem;
+                    font-weight: bolder;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    // 增加 a 連結可點擊範圍
+                    a {
+                        padding: 5px 10px;
+
+                        &:hover {
+                            color: #00b894;
+                        }
+                    }
+                }
+                // 點開時給予的樣式
+                .sidebar-btn-active {
+                    background-color: #00b094;
+
+                    // 在背景是選擇的情況下，文字顏色不更動
+                    a {
+                        &:hover {
+                            color: #000000;
+                        }
+                    }
+                }
+
+                // icon 區塊顯示
+                .product-sidebar-icon {
+                    display: flex;
+                    // float: right;
+                    // background: blue;
+                    transition: all 0.5s ease-in-out;
+                    width: 25px;
+                    height: 25px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                // 顯示子種類的區塊
+                .product-sidebar-text {
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 0 18px;
+                    overflow: hidden; // 隱藏多出去的區塊
+                    height: 0; // 隱藏高度
+                    background-color: #fff;
+
+                    // 每個文字連結樣式
+                    .product-sidebar-link {
+                        display: block;
+                        font-weight: bolder;
+                        padding: 8px 0 5px 10px; // 文字往右
+
+                        // @include media768 {
+                        //     font-size: 0.9rem;
+                        // }
+
+                        &:hover,
+                        &:active {
+                            color: #00b094;
+                            // color: DarkTurquoise;
+                        }
+                    }
+                }
+                // 展開區塊
+                .open {
+                    height: auto;
+                    padding: 5px 18px;
+                }
+            }
+        }
+    }
+}
