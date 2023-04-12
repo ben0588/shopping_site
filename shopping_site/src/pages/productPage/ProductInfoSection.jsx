@@ -197,6 +197,12 @@ function ProductIInfoPage() {
         handleProductDeleteWish(filterList)
     }
 
+    console.log(showImage)
+
+    useEffect(() => {
+        const newImg = showImage
+    }, [])
+
     return (
         <>
             <section className='product-info-container'>
@@ -205,7 +211,7 @@ function ProductIInfoPage() {
                         <div className='product-info-images'>
                             <div className='product-image-big'>
                                 <img
-                                    src={showImage}
+                                    src={process.env.PUBLIC_URL + showImage}
                                     alt={name}
                                     className='product-big-image'
                                     onClick={() => setImageToggle(!imageToggle)} // 點大圖片彈出全畫面更大圖片查看
@@ -225,10 +231,13 @@ function ProductIInfoPage() {
                                         return (
                                             <span className='product-small-items' key={index}>
                                                 <img
-                                                    src={item}
+                                                    src={process.env.PUBLIC_URL + item}
                                                     alt={name}
                                                     // 更新大圖示區塊要顯示的照片
-                                                    onClick={(e) => setShowImage(e.target.currentSrc)}
+                                                    onClick={(e) => {
+                                                        // setShowImage(e.target.currentSrc)
+                                                        setShowImage(item)
+                                                    }}
                                                     className='product-small-image'
                                                     style={{
                                                         border:
@@ -266,7 +275,7 @@ function ProductIInfoPage() {
                             onClick={() => setImageToggle(!imageToggle)} // 點外層也會關閉顯示
                         >
                             <div className='product-image-show-content'>
-                                <img src={showImage} alt={showImage} />
+                                <img src={process.env.PUBLIC_URL + showImage} alt={showImage} />
                                 <AiOutlineClose
                                     className='image-show-close'
                                     onClick={() => setImageToggle(!imageToggle)} // 點 X 關閉 icon 也會進行關閉

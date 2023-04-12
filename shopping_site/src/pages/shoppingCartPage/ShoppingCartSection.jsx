@@ -252,7 +252,7 @@ function ShoppingCartSection() {
                                 </li>
                                 <li>
                                     <NavLink to={`/product/${item.id}`} title='回到商品詳情'>
-                                        <img src={item.thumbnail} alt={item.name} />
+                                        <img src={process.env.PUBLIC_URL + item.thumbnail} alt={item.name} />
                                     </NavLink>
                                     <h4>
                                         {item.name}

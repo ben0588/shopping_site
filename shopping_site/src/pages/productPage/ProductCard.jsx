@@ -140,7 +140,11 @@ const ProductCard = () => {
                                                 setIsGoToTop(true)
                                             }}
                                         >
-                                            <img className='product-card-img' src={item.thumbnail} alt={item.name} />
+                                            <img
+                                                className='product-card-img'
+                                                src={process.env.PUBLIC_URL + item.thumbnail}
+                                                alt={item.name}
+                                            />
                                         </Link>
                                         <ProductColor
                                             type='radio'

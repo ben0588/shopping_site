@@ -10,7 +10,12 @@ const ProductDescribeSection = () => {
             <div className='product-describe-content'>
                 {descriptionImages ? (
                     descriptionImages.map((item, index) => (
-                        <img src={item} alt={item} key={index} className='product-describe-img' />
+                        <img
+                            src={process.env.PUBLIC_URL + item}
+                            alt={item}
+                            key={index}
+                            className='product-describe-img'
+                        />
                     ))
                 ) : (
                     <Skeleton className='img-container-skeleton' />
