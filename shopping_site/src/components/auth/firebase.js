@@ -19,7 +19,7 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig)
+// const app = initializeApp(firebaseConfig)
 // const analytics = getAnalytics(app)
 
 // 匯出google登入程式 & 登入環境
