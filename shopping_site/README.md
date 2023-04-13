@@ -13,7 +13,7 @@
 使用者可以將自己需要的產品添加到購物車中，並在需要的時候進行結算。也可以將未來想購買的商品加入願望清單中。
 
 ### 注意事項 : 
-因後端技術未成熟，會員系統僅提供影片操作展示，[影片網址](https://www.awesomescreenshot.com/video/16283160)，請見諒，後端程式架構請查看此專案 : [後端GitHub](https://github.com/ben0588/node_shopping_site)
+因雲端資料庫部屬問題，會員系統僅提供影片操作展示，[影片網址(影片處02:51~07:36)](https://www.awesomescreenshot.com/video/16283160)，請見諒，後端程式架構請查看此專案 : [後端GitHub](https://github.com/ben0588/node_shopping_site)
 
 ## 設計相關
 -  RWD 響應式 設計範圍:  
