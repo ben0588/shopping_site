@@ -197,12 +197,6 @@ function ProductIInfoPage() {
         handleProductDeleteWish(filterList)
     }
 
-    console.log(showImage)
-
-    useEffect(() => {
-        const newImg = showImage
-    }, [])
-
     return (
         <>
             <section className='product-info-container'>
