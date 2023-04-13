@@ -15,6 +15,7 @@ import Loading from '../../components/common/Loading'
 import ProductContext from '../../components/payment/ProductContext'
 import ProductAdvertiseSection from './ProductAdvertiseSection'
 import ProductMenu from './ProductMenu'
+// import productDataJson from '../../productData_1.json'
 // import { products } from '../../data.jsx'
 // console.log(JSON.stringify(products))
 
@@ -136,7 +137,7 @@ const ProductPage = () => {
         ;(async () => {
             try {
                 handleProductIsLoading(true) // 開始加載
-                const result = await axios.get('/productData_1.json')
+                const result = await axios.get('/productData.json')
                 if (result) {
                     // setProductData(result.data) // 初次紀錄原始資料
                     // setFilterProductData(result.data) // 後續用來篩選用的
