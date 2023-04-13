@@ -137,7 +137,8 @@ const ProductPage = () => {
         ;(async () => {
             try {
                 handleProductIsLoading(true) // 開始加載
-                const result = await axios.get('/productData.json')
+                // const result = await axios.get('/productData.json') // 更新以下gh-pages專用
+                const result = await axios.get('https://ben0588.github.io/shopping_site/productData.json')
                 if (result) {
                     // setProductData(result.data) // 初次紀錄原始資料
                     // setFilterProductData(result.data) // 後續用來篩選用的
