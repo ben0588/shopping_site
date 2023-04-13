@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping_site/static/css/main.06d01b61.css",
-    "main.js": "/shopping_site/static/js/main.19a0ccbc.js",
+    "main.js": "/shopping_site/static/js/main.1c6e00b1.js",
     "static/js/787.b12c02bd.chunk.js": "/shopping_site/static/js/787.b12c02bd.chunk.js",
     "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.776204e0cb8874609c2f.jpg",
     "static/media/ben0588Demo.png": "/shopping_site/static/media/ben0588Demo.f051e90f359bdb71503a.png",
@@ -69,11 +69,11 @@
     "static/media/caret_left_icon.svg": "/shopping_site/static/media/caret_left_icon.44281e9401744f656bfaa3673f94baf7.svg",
     "static/media/email_icon.svg": "/shopping_site/static/media/email_icon.b4731eb9dbea69341bd0097937440f0f.svg",
     "main.06d01b61.css.map": "/shopping_site/static/css/main.06d01b61.css.map",
-    "main.19a0ccbc.js.map": "/shopping_site/static/js/main.19a0ccbc.js.map",
+    "main.1c6e00b1.js.map": "/shopping_site/static/js/main.1c6e00b1.js.map",
     "787.b12c02bd.chunk.js.map": "/shopping_site/static/js/787.b12c02bd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.06d01b61.css",
-    "static/js/main.19a0ccbc.js"
+    "static/js/main.1c6e00b1.js"
   ]
 }
