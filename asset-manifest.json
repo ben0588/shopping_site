@@ -1,18 +1,17 @@
 {
   "files": {
-    "main.css": "/shopping_site/static/css/main.b82f4fbc.css",
-    "main.js": "/shopping_site/static/js/main.5841b80c.js",
+    "main.css": "/shopping_site/static/css/main.2deabb19.css",
+    "main.js": "/shopping_site/static/js/main.b2a4f3c9.js",
     "static/js/787.b12c02bd.chunk.js": "/shopping_site/static/js/787.b12c02bd.chunk.js",
-    "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.776204e0cb8874609c2f.jpg",
     "static/media/ben0588Demo.png": "/shopping_site/static/media/ben0588Demo.f051e90f359bdb71503a.png",
+    "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.b73cf832c9b5065919ea.jpg",
     "static/media/m-07.jpg": "/shopping_site/static/media/m-07.6a984b268f0b430df657.jpg",
-    "static/media/banner_02.jpg": "/shopping_site/static/media/banner_02.38b0c20c83d8634deb5d.jpg",
-    "static/media/banner_03.jpg": "/shopping_site/static/media/banner_03.8d1b9675dff842bfcd08.jpg",
-    "static/media/grid_sm_5.jpg": "/shopping_site/static/media/grid_sm_5.cf85a2c5cd696c0510e3.jpg",
+    "static/media/banner_02.jpg": "/shopping_site/static/media/banner_02.967a72340b775468ca23.jpg",
+    "static/media/banner_03.jpg": "/shopping_site/static/media/banner_03.3a700da19c5889396abe.jpg",
     "static/media/grid_big_2.jpg": "/shopping_site/static/media/grid_big_2.edb0194386becb12969a.jpg",
     "static/media/tennisAd.png": "/shopping_site/static/media/tennisAd.48e00edc7a772cf42d65.png",
-    "static/media/banner_04.jpg": "/shopping_site/static/media/banner_04.91fb46e838d74003248f.jpg",
-    "static/media/grid_big_1.jpg": "/shopping_site/static/media/grid_big_1.45c6b600e9fb9e5b17e6.jpg",
+    "static/media/banner_04.jpg": "/shopping_site/static/media/banner_04.4962c66cb33bbb761683.jpg",
+    "static/media/grid_sm_5.jpg": "/shopping_site/static/media/grid_sm_5.a3a2bc0877db1cd2cf69.jpg",
     "static/media/grid_sm_4.jpg": "/shopping_site/static/media/grid_sm_4.ffe275df2a648968ae76.jpg",
     "static/media/s-09.jpg": "/shopping_site/static/media/s-09.df75406ab883620d00df.jpg",
     "static/media/s-10.jpg": "/shopping_site/static/media/s-10.240bcc6d5697efc496f8.jpg",
@@ -30,6 +29,7 @@
     "static/media/product_1.png": "/shopping_site/static/media/product_1.76917240858064887705.png",
     "static/media/grid_sm_2.jpg": "/shopping_site/static/media/grid_sm_2.72693e716d79f03611d1.jpg",
     "static/media/grid_sm_3.jpg": "/shopping_site/static/media/grid_sm_3.95ebfc3a5fa2e9e782a8.jpg",
+    "static/media/grid_big_1.jpg": "/shopping_site/static/media/grid_big_1.1925d78afd2a2edadd2e.jpg",
     "static/media/grid_sm_1.jpg": "/shopping_site/static/media/grid_sm_1.42488ce8923e16118c2e.jpg",
     "static/media/LOGO_8.png": "/shopping_site/static/media/LOGO_8.b79590639e69fd4c6700.png",
     "static/media/LOGO_9.png": "/shopping_site/static/media/LOGO_9.ecba792399f559465b3b.png",
@@ -68,12 +68,12 @@
     "static/media/caret_right_icon.svg": "/shopping_site/static/media/caret_right_icon.d1a5d7386302b0274b08fbe6d8c3be3c.svg",
     "static/media/caret_left_icon.svg": "/shopping_site/static/media/caret_left_icon.44281e9401744f656bfaa3673f94baf7.svg",
     "static/media/email_icon.svg": "/shopping_site/static/media/email_icon.b4731eb9dbea69341bd0097937440f0f.svg",
-    "main.b82f4fbc.css.map": "/shopping_site/static/css/main.b82f4fbc.css.map",
-    "main.5841b80c.js.map": "/shopping_site/static/js/main.5841b80c.js.map",
+    "main.2deabb19.css.map": "/shopping_site/static/css/main.2deabb19.css.map",
+    "main.b2a4f3c9.js.map": "/shopping_site/static/js/main.b2a4f3c9.js.map",
     "787.b12c02bd.chunk.js.map": "/shopping_site/static/js/787.b12c02bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b82f4fbc.css",
-    "static/js/main.5841b80c.js"
+    "static/css/main.2deabb19.css",
+    "static/js/main.b2a4f3c9.js"
   ]
 }
