@@ -86,6 +86,7 @@ function Footer() {
                                 className='instagram-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='instagram-link'
                             >
                                 <InstagramIcon />
                             </a>
@@ -96,6 +97,7 @@ function Footer() {
                                 className='facebook-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='facebook-link'
                             >
                                 <FacebookIcon />
                             </a>
@@ -106,6 +108,8 @@ function Footer() {
                                 className='twitter-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='twitter-link'
+
                             >
                                 <TwitterIcon />
                             </a>
@@ -116,6 +120,8 @@ function Footer() {
                                 className='youtube-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='youtube-link'
+
                             >
                                 <YoutubeIcon />
                             </a>
@@ -126,12 +132,21 @@ function Footer() {
                                 className='twitch-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='twitch-link'
+
                             >
                                 <TwitchIcon />
                             </a>
                         </li>
                         <li className='footer-media-items'>
-                            <a href='https://line.me/' className='line-link' target='_blank' rel='noopener noreferrer'>
+                            <a
+                                href='https://line.me/'
+                                className='line-link'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label='line-link'
+
+                            >
                                 <LineIcon />
                             </a>
                         </li>
@@ -141,6 +156,8 @@ function Footer() {
                                 className='linkedin-link'
                                 target='_blank'
                                 rel='noopener noreferrer'
+                                aria-label='linkedin-link'
+
                             >
                                 <LinkedinIcon />
                             </a>

@@ -14,6 +14,8 @@ import { ThemeContext } from '../../components/theme/ThemesContext'
 import { useContext, useEffect } from 'react'
 import { CarouselArrowsButton, CarouselBulletsButton } from '../../components/carousel/CarouselButton'
 import AuthContext from '../../components/auth/AuthContext'
+import { Img } from 'react-image'
+
 const carouselList = [
     {
         img: banner02Img,
@@ -68,7 +70,13 @@ function HomeBannerSection() {
                                 {contextValue.state.isLoading ? (
                                     <Skeleton className='img-container-skeleton' />
                                 ) : (
-                                    <img src={item.img} alt={item.alt} className='home-banner-img' />
+                                    <Img
+                                        src={item.img}
+                                        alt={item.alt}
+                                        className='home-banner-img'
+                                        loader={<Skeleton />}
+                                        loading='lazy'
+                                    />
                                 )}
                             </div>
                         </Slide>

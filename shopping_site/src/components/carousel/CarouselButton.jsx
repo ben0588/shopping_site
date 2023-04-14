@@ -14,6 +14,7 @@ export const CarouselArrowsButton = () => {
     return (
         <div className='glide__arrows' data-glide-el='controls'>
             <button
+                type='button'
                 className='glide__arrow glide__arrow--left arrow-left'
                 data-glide-dir='<'
                 style={{ backgroundColor: theme.background }}
@@ -23,6 +24,7 @@ export const CarouselArrowsButton = () => {
             </button>
             <button
                 className='glide__arrow glide__arrow--right arrow-right'
+                type='button'
                 data-glide-dir='>'
                 style={{ backgroundColor: theme.background }}
             >

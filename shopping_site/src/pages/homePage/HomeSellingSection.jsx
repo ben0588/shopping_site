@@ -26,6 +26,7 @@ import sectionImgTwo from '../../images/other/s-09.jpg'
 import sectionImgTwoTo from '../../images/other/s-19.jpg'
 import overlay from '../../images/other/m-07.jpg'
 import AuthContext from '../../components/auth/AuthContext'
+import { Img } from 'react-image'
 
 function HomeSellingSection({ appRef }) {
     const { theme } = useContext(ThemeContext) // 引用主題色
@@ -53,9 +54,9 @@ function HomeSellingSection({ appRef }) {
             style={{ color: theme.foreground, backgroundColor: theme.background }}
         >
             <div className='home-selling-content'>
-                <h3 className='home-selling-slogan'>
+                <h2 className='home-selling-slogan'>
                     {contextValue.state.isLoading ? <Skeleton width={`200px`} /> : '全新技術'}
-                </h3>
+                </h2>
                 <h3 className='home-selling-subslogan'>
                     {contextValue.state.isLoading ? (
                         <Skeleton className='home-selling-subslogan-skeleton' />
@@ -70,10 +71,11 @@ function HomeSellingSection({ appRef }) {
                     data-aos-easing='ease-in-sine'
                     style={{ border: `2px solid ${theme.foreground}` }}
                 >
-                    <img
+                    <Img
                         src={sectionImgOneTo}
                         alt='source:https://unsplash.com/photos/nyAzMQ6Ejgs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'
                         className='home-selling-img'
+                        loader={<Skeleton />}
                     />
                     <h2
                         className='home-selling-title 
@@ -99,10 +101,11 @@ function HomeSellingSection({ appRef }) {
                     data-aos-offset='300'
                     data-aos-easing='ease-in-sine'
                 >
-                    <img
+                    <Img
                         src={sectionImgTwoTo}
                         alt='source:https://unsplash.com/photos/nyAzMQ6Ejgs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'
                         className='home-selling-img'
+                        loader={<Skeleton />}
                     />
                     <h2
                         className='home-selling-title 
