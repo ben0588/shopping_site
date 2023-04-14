@@ -1,8 +1,9 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useContext, useLayoutEffect } from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
 import styled from 'styled-components/macro'
+import AuthContext from '../auth/AuthContext'
 
 // 建立獨立元件CSS屬性 (必須放在function外面，否則會跳提示#3117 )
 const LoadingContainer = styled.div`
@@ -34,31 +35,30 @@ const ProgressNumber = styled.div`
 `
 function FirstLoading({ onLoadingOk }) {
     const [progressBarNumber, setProgressBarNumber] = useState(0) // 控制百分比數字
-
-    // ----- 未來改寫成 useLayoutEffect 寫法
+    const { contextValue } = useContext(AuthContext) // 控制狀態
+    const { handleFirstLoading } = contextValue
 
     // 控制百分比讀取
-    useLayoutEffect(() => {
+    useEffect(() => {
+        let intervalId
         // 判斷初次進入網站時是否已完全加載
-        const domLoaded = () => {
-            // 執行百分比數字累加顯示
-            const intervalId = setInterval(() => {
-                setProgressBarNumber(progressBarNumber + 1)
+        if (progressBarNumber < 100) {
+            intervalId = setInterval(() => {
+                setProgressBarNumber((pre) => pre + 1)
             }, 5)
+        }
+        if (progressBarNumber === 100) {
+            handleFirstLoading(true) // 進度達100時，完成加載
+        }
+
+        // 當網頁加載完畢且百分比達100%才觸發關閉
+        window.onload = () => {
             if (progressBarNumber === 100) {
-                // 加載至 100% 時清除自動累加百分比數字
-                clearInterval(intervalId)
-                // 加載100%後返回主頁
-                onLoadingOk && onLoadingOk(true)
+                clearInterval(intervalId) // 清除計時器
             }
         }
-        // 加上文件監聽效果
-        document.addEventListener('DOMContentLoaded', domLoaded)
 
-        return () => {
-            // 加載完畢後離開清除 setInterval & 文件監聽效果
-            document.removeEventListener('DOMContentLoaded', domLoaded)
-        }
+        return () => clearInterval(intervalId) // 離開時清除計時器
     }, [progressBarNumber])
 
     return (

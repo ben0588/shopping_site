@@ -51,10 +51,10 @@ import PrivacyPolicy from './pages/termsPage/PrivacyPolicyPage.jsx' // 隱私政
 // ------- 功能元件 -------
 import Loading from './components/common/FirstLoading.jsx'
 import AdminAddSection from './pages/adminPage/AdminAddSection'
+import FirstLoading from './components/common/FirstLoading.jsx'
 
 const App = () => {
     const { contextValue } = useContext(AuthContext) // 驗證會員 auth context環境
-    const [isLoading, setIsLoading] = useState(true) // 控制loading元件是否完成
 
     return (
         <HelmetProvider>
@@ -70,7 +70,7 @@ const App = () => {
                     <meta name='twitter:card' content={`${window.location.origin}${demoImage}`}></meta>
                     <meta property='fb:app_id' content={`${process.env.REACT_APP_FB_ID}`} />
                 </Helmet>
-                {isLoading ? (
+                {contextValue.state.firstLoading ? (
                     <Routes>
                         {/* 最外層設定Layout，元件內新增Navbar、footer元件，在中間內容加上<Outlet />代表內容切換 */}
                         <Route path='/' element={<Layout />}>
@@ -146,11 +146,11 @@ const App = () => {
                         </Route>
                     </Routes>
                 ) : (
-                    <Loading
-                        // 給子元件方法，由子元件決定完成後回傳callback狀態
-                        onLoadingOk={(state) => {
-                            state && setIsLoading(state)
-                        }}
+                    <FirstLoading
+                    // 給子元件方法，由子元件決定完成後回傳callback狀態
+                    // onLoadingOk={(state) => {
+                    //     state && setIsLoading(state)
+                    // }}
                     />
                 )}
             </div>

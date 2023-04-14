@@ -17,6 +17,7 @@ const initialState = {
     userData: [],
     isLoading: false,
     isLogin: false, // 用來管理是否已登入
+    firstLoading: false, // 首次加載
 }
 // 建立 authContext 驗證會員 Token useContext
 export const AuthContext = createContext(initialState)
@@ -39,6 +40,12 @@ export const authReducer = (state, action) => {
             return {
                 ...state,
                 userData: action.payload, // 放入API取得回來的會員資料
+            }
+        }
+        case 'FIRST_LOADING': {
+            return {
+                ...state,
+                firstLoading: action.payload,
             }
         }
         case 'ISLOADING': {
@@ -129,6 +136,14 @@ export const AuthProvider = ({ children }) => {
         },
         [state]
     )
+
+    // 處理首次加載問題
+    const handleFirstLoading = (state) => {
+        dispatch({
+            type: 'FIRST_LOADING',
+            payload: state,
+        })
+    }
 
     // 處理目前是否正在加載狀態
     const handleIsLoading = (data) => {
@@ -411,6 +426,7 @@ export const AuthProvider = ({ children }) => {
             handleSetToken, // 登入取得 token & 紀錄 localStorage
             handleLogoutRemoveToken, // 登出清除 token
             handleSetUserData, // 更新 會員資料
+            handleFirstLoading, // 判斷是否首次加載
             handleIsLoading, // 處理目前是否正在加載中
             handleThirdLogin, // 第三方登入時確認註冊+取得token+用token取得會員資料
             handleFbLogin, // facebook 官方專屬登入方法
