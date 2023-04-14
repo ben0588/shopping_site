@@ -111,5 +111,7 @@ npm start
 
 ## PageSpeed Insights檢測
 
-- [優化前](https://ben0588.github.io/shopping_site/images/電腦版優化前.png)
-- [優化後](https://ben0588.github.io/shopping_site/images/電腦版優化後.png)
+- 優化前
+    - ![優化前](https://ben0588.github.io/shopping_site/images/電腦版優化前.png)
+- 優化後
+    - ![優化前](https://ben0588.github.io/shopping_site/images/電腦版優化後.png)
