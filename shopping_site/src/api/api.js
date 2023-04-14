@@ -174,9 +174,7 @@ export const userEditPassword = async (oldPassword, newPassword, token) => {
 export const userEditData = async (data, token) => {
     try {
         const body = {
-            user: {
-                data,
-            },
+            user: data,
         }
         const config = {
             headers: {
