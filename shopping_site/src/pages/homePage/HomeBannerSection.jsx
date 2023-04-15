@@ -70,12 +70,13 @@ function HomeBannerSection() {
                                 {contextValue.state.isLoading ? (
                                     <Skeleton className='img-container-skeleton' />
                                 ) : (
-                                    <Img
+                                    // 更改回img原生標籤，因左側邊邊圖片會消失情況
+                                    <img
                                         src={item.img}
                                         alt={item.alt}
                                         className='home-banner-img'
-                                        loader={<Skeleton />}
-                                        loading='lazy'
+                                        // loader={<Skeleton className='img-container-skeleton' />}
+                                        // loading='lazy'
                                     />
                                 )}
                             </div>

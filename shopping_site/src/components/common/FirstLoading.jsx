@@ -33,7 +33,7 @@ const ProgressNumber = styled.div`
     position: absolute;
     left: 0;
 `
-function FirstLoading({ onLoadingOk }) {
+function FirstLoading() {
     const [progressBarNumber, setProgressBarNumber] = useState(0) // 控制百分比數字
     const { contextValue } = useContext(AuthContext) // 控制狀態
     const { handleFirstLoading } = contextValue

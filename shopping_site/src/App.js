@@ -1,8 +1,7 @@
-import React, { createContext, useContext, useEffect, useLayoutEffect, useRef } from 'react'
+import React, { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 import demoImage from './images/other/ben0588Demo.png' // 轉發封面圖
-import { Helmet, HelmetProvider } from 'react-helmet-async' //
+import { Helmet, HelmetProvider } from 'react-helmet-async' // 鑽寫 SEO 功能
 
 // ------- 共用元件 -------
 import Layout from './components/layout/Layout.jsx' // 佈局設定
@@ -49,8 +48,6 @@ import ShoppingCartOrdersSection from './pages/shoppingCartPage/ShoppingCartOrde
 import ServiceTermsPage from './pages/termsPage/ServiceTermsPage.jsx' // 服務條款頁面
 import PrivacyPolicy from './pages/termsPage/PrivacyPolicyPage.jsx' // 隱私政策
 // ------- 功能元件 -------
-import Loading from './components/common/FirstLoading.jsx'
-import AdminAddSection from './pages/adminPage/AdminAddSection'
 import FirstLoading from './components/common/FirstLoading.jsx'
 
 const App = () => {
@@ -147,10 +144,7 @@ const App = () => {
                     </Routes>
                 ) : (
                     <FirstLoading
-                    // 給子元件方法，由子元件決定完成後回傳callback狀態
-                    // onLoadingOk={(state) => {
-                    //     state && setIsLoading(state)
-                    // }}
+                    // 由 authContext 控制狀態傳遞
                     />
                 )}
             </div>

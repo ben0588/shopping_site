@@ -71,12 +71,16 @@ function HomeSellingSection({ appRef }) {
                     data-aos-easing='ease-in-sine'
                     style={{ border: `2px solid ${theme.foreground}` }}
                 >
-                    <Img
-                        src={sectionImgOneTo}
-                        alt='source:https://unsplash.com/photos/nyAzMQ6Ejgs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'
-                        className='home-selling-img'
-                        loader={<Skeleton />}
-                    />
+                    {contextValue.state.isLoading ? (
+                        <Skeleton className='home-selling-img' />
+                    ) : (
+                        <Img
+                            src={sectionImgOneTo}
+                            alt='source:https://unsplash.com/photos/nyAzMQ6Ejgs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink'
+                            className='home-selling-img'
+                        />
+                    )}
+                    {/* 標題框用Skeleton元件會出現GSAP讀取不到DOM情況 */}
                     <h2
                         className='home-selling-title 
                         home-selling-one-title'
@@ -87,10 +91,14 @@ function HomeSellingSection({ appRef }) {
                         重磅上市!
                         <span className='cursor' ref={cursorRef}></span>
                     </h2>
-                    <Link to='/hotNews' className='home-selling-btn home-selling-left-btn'>
-                        <CaretRightIcon className='home-selling-icon' />
-                        前去逛逛
-                    </Link>
+                    {contextValue.state.isLoading ? (
+                        <Skeleton className='home-selling-btn home-selling-left-btn' />
+                    ) : (
+                        <Link to='/hotNews' className='home-selling-btn home-selling-left-btn'>
+                            <CaretRightIcon className='home-selling-icon' />
+                            前去逛逛
+                        </Link>
+                    )}
                 </div>
             </div>
             <div className='home-selling-content'>

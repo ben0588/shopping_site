@@ -87,6 +87,20 @@ export const AuthProvider = ({ children }) => {
         window.history.pushState({}, '', url.toString()) // 將當前 URL 參數更新
     }
 
+    // 控制讀取狀態
+    useEffect(() => {
+        handleIsLoading(true) // 進入加載模式
+        let timeout = setTimeout(() => {
+            handleIsLoading(false)
+        }, 1500)
+
+        window.onload = () => {
+            clearTimeout(timeout) // 確認讀取完畢關閉
+        }
+
+        return () => clearTimeout(timeout) // 確認讀取完畢關閉
+    }, [])
+
     // 控制是否要回到首頁
     const handleIsGoToTop = () => {
         window.scrollTo({

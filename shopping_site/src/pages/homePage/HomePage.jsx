@@ -18,14 +18,6 @@ function HomePage() {
     const { contextValue } = useContext(AuthContext)
     const { handleIsLoading } = contextValue
 
-    // 模擬加載畫面
-    useEffect(() => {
-        handleIsLoading(true)
-        setTimeout(() => {
-            handleIsLoading(false)
-        }, 2000)
-    }, [])
-
     return (
         <section className='home-container' style={{ backgroundColor: theme.background }}>
             <HomeBannerSection />
