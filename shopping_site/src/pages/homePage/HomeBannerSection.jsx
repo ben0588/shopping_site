@@ -38,7 +38,7 @@ const carouselList = [
         img: banner04Img,
         text: '網球 tennis demo',
         alt: 'source:https://unsplash.com/photos/VZEnVM6c1lY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
-        slogan: '與網球有約，購物就從這裡開始',
+        slogan: '精選網球好物，享受快感',
     },
 ]
 function HomeBannerSection() {
