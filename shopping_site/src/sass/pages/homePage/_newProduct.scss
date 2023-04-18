@@ -130,6 +130,11 @@
         &:hover {
             filter: brightness(1);
         }
+
+        @include media414 {
+            width: 60%;
+            margin: 0 auto;
+        }
     }
 
     // 客製化下方滾條樣式
