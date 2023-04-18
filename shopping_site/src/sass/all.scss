@@ -12,7 +12,7 @@
 // 這樣未來在一次更改時就可以全部調整色系。也支持 * 加減乘除。詳情查看 _base.scss 全域設定
 
 // @import 不用加上_檔案前墜、.scss副檔名。會預設去抓取同層的目錄檔案名。#載入有看順序#。請注意
-@import url('https://fonts.googleapis.com/css2?family=Microsoft+JhengHei'); // 微軟正黑體
+// @import url('https://fonts.googleapis.com/css2?family=Microsoft+JhengHei'); // 微軟正黑體
 
 // abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
 // 使用 @mixin 建立名稱後 在對應處區使用 @include 引用用即可。也可以帶入變數去使用 ($items,$items)
