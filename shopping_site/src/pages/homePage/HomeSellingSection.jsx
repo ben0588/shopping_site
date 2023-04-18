@@ -80,7 +80,6 @@ function HomeSellingSection({ appRef }) {
                     <h2
                         className='home-selling-title 
                         home-selling-one-title'
-                        data-aos='fade-down'
                     >
                         新品熱賣中
                         <br />

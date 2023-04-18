@@ -10,32 +10,35 @@ import banner03Img from '../../images/banner/banner_03.jpg'
 import banner04Img from '../../images/banner/banner_04.jpg'
 
 import { Carousel, Slide } from '../../components/carousel/Carousel'
-import { ThemeContext } from '../../components/theme/ThemesContext'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { CarouselArrowsButton, CarouselBulletsButton } from '../../components/carousel/CarouselButton'
 import AuthContext from '../../components/auth/AuthContext'
-import { Img } from 'react-image'
+import { Link, NavLink } from 'react-router-dom'
 
 const carouselList = [
     {
-        img: banner02Img,
+        img: banner01Img,
         text: '網球 tennis demo',
         alt: 'source:https://unsplash.com/photos/6vTF5Was3rU?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink',
+        slogan: '選購網球裝備，體驗全新快感',
+    },
+    {
+        img: banner02Img,
+        text: 'tennis demo',
+        alt: 'source:https://unsplash.com/photos/CA3laY8sok0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+        slogan: '網球就是生活，選購不用愁',
     },
     {
         img: banner03Img,
         text: 'tennis demo',
-        alt: 'source:https://unsplash.com/photos/sid2a_eRaQ0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink',
+        alt: 'source:https://www.pexels.com/zh-tw/photo/3800470/',
+        slogan: '與網球有約，購物就從這裡開始',
     },
     {
         img: banner04Img,
-        text: 'tennis demo',
-        alt: 'source:https://www.pexels.com/zh-tw/photo/3800470/',
-    },
-    {
-        img: banner01Img,
         text: '網球 tennis demo',
-        alt: 'source:https://unsplash.com/photos/nyAzMQ6Ejgs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink',
+        alt: 'source:https://unsplash.com/photos/VZEnVM6c1lY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText',
+        slogan: '與網球有約，購物就從這裡開始',
     },
 ]
 function HomeBannerSection() {
@@ -79,6 +82,12 @@ function HomeBannerSection() {
                                         // loading='lazy'
                                     />
                                 )}
+                            </div>
+                            <div className='glide__caption'>
+                                <h2 className='home-banner-text'>{item.slogan}</h2>
+                                <Link to='/product' role='button' className='home-banner-btn'>
+                                    探索更多
+                                </Link>
                             </div>
                         </Slide>
                     )

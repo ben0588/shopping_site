@@ -133,3 +133,77 @@
         }
     }
 }
+
+// 每個輪播控制 (li)
+.glide__slide {
+    position: relative;
+    // cursor: grab;
+}
+
+// 文字與按鈕區塊
+.glide__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include media568 {
+        height: 100%;
+        align-items: center;
+        top: 55%;
+    }
+
+    @include media320 {
+        top: 60%;
+    }
+
+    .home-banner-text {
+        font-size: 2rem;
+        font-weight: bolder;
+        text-shadow: 0 0 10px black;
+
+        @include media568 {
+            font-size: 1.6rem;
+        }
+        @include media320 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .home-banner-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0 0;
+        width: 135px;
+        height: 35px;
+        background-color: #00b894;
+        color: black;
+        cursor: pointer;
+        border: 2px solid black;
+        box-shadow: 0 0 2px black;
+        font-size: 1rem;
+        font-weight: bolder;
+        transition: all 0.1s ease-in;
+
+        &:hover,
+        &:active {
+            border: 2px solid #2bdbb8;
+            background-color: #2bdbb8;
+            box-shadow: 0 0 15px #2bdbb8;
+            color: #b80012;
+        }
+
+        @include media320 {
+            display: none;
+        }
+    }
+}
