@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/shopping_site/static/css/main.d24d94da.css",
+    "main.css": "/shopping_site/static/css/main.812e205c.css",
     "main.js": "/shopping_site/static/js/main.2c6076b2.js",
     "static/js/787.b12c02bd.chunk.js": "/shopping_site/static/js/787.b12c02bd.chunk.js",
     "static/media/ben0588Demo.png": "/shopping_site/static/media/ben0588Demo.f051e90f359bdb71503a.png",
@@ -44,8 +44,8 @@
     "static/media/google_logo_icon.svg": "/shopping_site/static/media/google_logo_icon.fc4f52a0dd129319bc68fc612d4effa3.svg",
     "static/media/github_logo_icon.svg": "/shopping_site/static/media/github_logo_icon.e21209f267368a1bd7975dab65fcd209.svg",
     "static/media/shopping_cart_icon.svg": "/shopping_site/static/media/shopping_cart_icon.6010b8be9a55976eda4a3b85a96be365.svg",
-    "static/media/zoom_icon.svg": "/shopping_site/static/media/zoom_icon.268a038bc6274ce8eacbfaa7298ef955.svg",
     "index.html": "/shopping_site/index.html",
+    "static/media/zoom_icon.svg": "/shopping_site/static/media/zoom_icon.268a038bc6274ce8eacbfaa7298ef955.svg",
     "static/media/eye_slash_icon.svg": "/shopping_site/static/media/eye_slash_icon.0a5ff9164f71cfb5efe6be23d80dc12f.svg",
     "static/media/love_1_icon.svg": "/shopping_site/static/media/love_1_icon.98fffa4a7ae559f6db69611338f21d6a.svg",
     "static/media/user_login_icon.svg": "/shopping_site/static/media/user_login_icon.18e91c8975ff231e135cc5387ed5a361.svg",
@@ -68,12 +68,12 @@
     "static/media/caret_right_icon.svg": "/shopping_site/static/media/caret_right_icon.d1a5d7386302b0274b08fbe6d8c3be3c.svg",
     "static/media/caret_left_icon.svg": "/shopping_site/static/media/caret_left_icon.44281e9401744f656bfaa3673f94baf7.svg",
     "static/media/email_icon.svg": "/shopping_site/static/media/email_icon.b4731eb9dbea69341bd0097937440f0f.svg",
-    "main.d24d94da.css.map": "/shopping_site/static/css/main.d24d94da.css.map",
+    "main.812e205c.css.map": "/shopping_site/static/css/main.812e205c.css.map",
     "main.2c6076b2.js.map": "/shopping_site/static/js/main.2c6076b2.js.map",
     "787.b12c02bd.chunk.js.map": "/shopping_site/static/js/787.b12c02bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d24d94da.css",
+    "static/css/main.812e205c.css",
     "static/js/main.2c6076b2.js"
   ]
 }
