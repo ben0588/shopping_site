@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/shopping_site/static/css/main.6cc8a293.css",
-    "main.js": "/shopping_site/static/js/main.a56f10bc.js",
+    "main.css": "/shopping_site/static/css/main.1b7ebe1b.css",
+    "main.js": "/shopping_site/static/js/main.445a646b.js",
     "static/js/787.b12c02bd.chunk.js": "/shopping_site/static/js/787.b12c02bd.chunk.js",
     "static/media/ben0588Demo.png": "/shopping_site/static/media/ben0588Demo.f051e90f359bdb71503a.png",
-    "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.b73cf832c9b5065919ea.jpg",
     "static/media/m-07.jpg": "/shopping_site/static/media/m-07.6a984b268f0b430df657.jpg",
-    "static/media/banner_02.jpg": "/shopping_site/static/media/banner_02.967a72340b775468ca23.jpg",
-    "static/media/banner_03.jpg": "/shopping_site/static/media/banner_03.3a700da19c5889396abe.jpg",
+    "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.967a72340b775468ca23.jpg",
     "static/media/grid_big_2.jpg": "/shopping_site/static/media/grid_big_2.edb0194386becb12969a.jpg",
+    "static/media/banner_04.jpg": "/shopping_site/static/media/banner_04.86c3bd28cd76390ccbd0.jpg",
     "static/media/tennisAd.png": "/shopping_site/static/media/tennisAd.48e00edc7a772cf42d65.png",
-    "static/media/banner_04.jpg": "/shopping_site/static/media/banner_04.4962c66cb33bbb761683.jpg",
+    "static/media/banner_02.jpg": "/shopping_site/static/media/banner_02.0f8c640351da29f95ac8.jpg",
+    "static/media/banner_03.jpg": "/shopping_site/static/media/banner_03.4962c66cb33bbb761683.jpg",
     "static/media/grid_sm_5.jpg": "/shopping_site/static/media/grid_sm_5.a3a2bc0877db1cd2cf69.jpg",
     "static/media/grid_sm_4.jpg": "/shopping_site/static/media/grid_sm_4.ffe275df2a648968ae76.jpg",
     "static/media/s-09.jpg": "/shopping_site/static/media/s-09.df75406ab883620d00df.jpg",
@@ -68,12 +68,12 @@
     "static/media/caret_right_icon.svg": "/shopping_site/static/media/caret_right_icon.d1a5d7386302b0274b08fbe6d8c3be3c.svg",
     "static/media/caret_left_icon.svg": "/shopping_site/static/media/caret_left_icon.44281e9401744f656bfaa3673f94baf7.svg",
     "static/media/email_icon.svg": "/shopping_site/static/media/email_icon.b4731eb9dbea69341bd0097937440f0f.svg",
-    "main.6cc8a293.css.map": "/shopping_site/static/css/main.6cc8a293.css.map",
-    "main.a56f10bc.js.map": "/shopping_site/static/js/main.a56f10bc.js.map",
+    "main.1b7ebe1b.css.map": "/shopping_site/static/css/main.1b7ebe1b.css.map",
+    "main.445a646b.js.map": "/shopping_site/static/js/main.445a646b.js.map",
     "787.b12c02bd.chunk.js.map": "/shopping_site/static/js/787.b12c02bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cc8a293.css",
-    "static/js/main.a56f10bc.js"
+    "static/css/main.1b7ebe1b.css",
+    "static/js/main.445a646b.js"
   ]
 }
