@@ -1,6 +1,8 @@
+import axios from 'axios'
 import { createContext, useContext, useEffect, useReducer } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import AuthContext from '../auth/AuthContext'
 
 // 創建初始狀態值
 const initialState = {
@@ -110,6 +112,7 @@ export const ProductProvider = ({ children }) => {
                 return state
         }
     }, initialState)
+    const { contextValue } = useContext(AuthContext) // 引入會員驗證
 
     // 新增購物車清單
     const handleAddCart = (data) => {
@@ -201,24 +204,30 @@ export const ProductProvider = ({ children }) => {
         color,
         size,
         sizeQuantity = 1,
-        checked = false
+        checked = true,
+        method
     ) => {
         // 取得商品編號、名稱、種類、縮圖、價格、數量(預設1)、顏色、尺寸、對應尺寸庫存數、選取狀態
         // console.log([{ id, name, category, thumbnail, price, quantity, color, size }])
         handleAddCart({ id, name, category, thumbnail, price, quantity, color, size, sizeQuantity, checked })
-        setTimeout(() => {
-            handleAddCartIsLoading(false) // 控制是否成功。讓購物車icon跳動
-        }, 1000)
-        toast.success(`新增商品成功! ${name}`, {
-            position: 'top-left',
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: 'light',
-        })
+        handleAddCartIsLoading(false)
+        // 不是使用本地端驅動就跳提示
+        if (method !== 'localStorage') {
+            setTimeout(() => {
+                handleAddCartIsLoading(false) // 控制是否成功。讓購物車icon跳動
+            }, 1000)
+
+            toast.success(`新增商品成功! ${name}`, {
+                position: 'top-left',
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+        }
     }
 
     // 處理新增指定商品參數至願望清單
@@ -262,6 +271,72 @@ export const ProductProvider = ({ children }) => {
             value
         )
     }
+
+    // 紀錄購物車內容在本地端(locationStorage)
+    useEffect(() => {
+        // 紀錄商品編號
+        if (productContextValues.state) {
+            const newList = state?.cart?.map((item) => {
+                const { id, quantity, size, sizeQuantity, checked } = item
+                return {
+                    id,
+                    quantity,
+                    size,
+                    sizeQuantity,
+                    checked,
+                }
+            })
+            // 有記錄才更新
+            if (newList.length > 0) {
+                localStorage.setItem('cartList', JSON.stringify(newList)) // 紀錄
+            }
+        }
+    }, [state])
+
+    // 偵測本地端是否有購物車紀錄
+    // 1.判斷當登入會員時，呼叫後端資料庫取得會員購物車資訊，在呼叫最新後端商品資料&庫存數量
+    // 2.判斷沒登入會員時，取得locationStorage的cartList的商品id、quantity、size、sizeQuantity，在呼叫最新後端商品資料&庫存數量
+    useEffect(() => {
+        if (contextValue?.state?.authToken || contextValue?.locationToken) {
+            // ...開始呼叫後端會員資料中的購物車表
+        } else {
+            //
+            const cartString = localStorage.getItem('cartList')
+            if (cartString) {
+                const newList = JSON.parse(cartString)
+                ;(async () => {
+                    try {
+                        // const result = await axios.get('/productData.json') // 模擬呼叫取得商品api
+                        const result = await axios.get('https://ben0588.github.io/shopping_site/productData.json')
+                        const newData = result?.data[0].products
+                        newList.map((item) => {
+                            const { quantity, size, sizeQuantity, checked } = item
+                            const findList = newData.find((element) => element.pid === item.id) // 先把對應資料篩選出來
+                            // 使用 filter 會回傳一個array，不符合使用條件，所以使用find
+                            const { pid, name, category, thumbnail, price, color } = findList // 結構出要新增的內容
+                            const method = 'localStorage'
+                            // 新增至購物車
+                            handleProductAddCart(
+                                pid,
+                                name,
+                                category,
+                                thumbnail,
+                                price,
+                                quantity,
+                                color,
+                                size,
+                                sizeQuantity,
+                                checked,
+                                method
+                            )
+                        })
+                    } catch (error) {
+                        console.log(error)
+                    }
+                })()
+            }
+        }
+    }, [])
 
     const productContextValues = {
         state,

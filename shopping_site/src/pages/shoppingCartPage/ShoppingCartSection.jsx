@@ -83,6 +83,7 @@ function ShoppingCartSection() {
             // 按下確認才會刪除成功
             if (result.isConfirmed) {
                 handleProductDeleteCart([])
+                localStorage.clear()
             }
         })
     }
@@ -119,7 +120,11 @@ function ShoppingCartSection() {
 
     // 初始勾選全部商品狀態
     useEffect(() => {
-        handleAllToggleCartChecked(true)
+        // 當購物車清單中有未選擇的情況，全選不打勾，新增商品預設是打勾的
+        const checkLocalStorageCartList = productContextValues.state.cart.filter((item) => item.checked === false)
+        if (checkLocalStorageCartList.length > 0) {
+            setFirstTotalState(false) // 預設全選狀態關閉
+        }
     }, [])
 
     // 監控勾選商品的金額顯示
@@ -154,49 +159,6 @@ function ShoppingCartSection() {
         handleProductDeleteWish(filterList) // 更新願望清單
     }
 
-    // 紀錄購物車內容在本地端(locationStorage)
-    useEffect(() => {
-        // 紀錄商品編號
-        if (productContextValues.state) {
-            const newList = productContextValues.state.cart.map((item, idex) => item.id)
-            localStorage.setItem('cartList', newList)
-        }
-    }, [productContextValues.state])
-
-    // 呼叫後端商品資料
-    const handleGetProduct = async (list) => {
-        try {
-            const newCartList = list.map(async (item) => {
-                const result = await axios.get('/productData_1.json')
-                if (result) {
-                    // 當送入的清單的id與呼叫api相同id才會返回
-                    return result.data[0].products.filter((items) => items.pid == item)
-                }
-            })
-            return newCartList
-        } catch (error) {}
-    }
-    // 1.判斷當登入會員時，呼叫後端資料庫取得會員購物車資訊，在呼叫最新後端商品資料&庫存數量
-    // 2.判斷沒登入會員時，取得locationStorage的cartList的商品id，在呼叫最新後端商品資料&庫存數量
-    useEffect(() => {
-        if (contextValue.state.authToken || contextValue.locationToken) {
-            // ...開始呼叫後端會員資料中的購物車表
-        } else {
-            // ...取得本地端商品資訊，呼叫後端產品資料
-            const localStorageCartId = localStorage.getItem('cartList')
-            const newArray = localStorageCartId.split(',')
-            ;(async () => {
-                try {
-                    const result = await handleGetProduct(newArray) // 呼叫api
-                    const results = await Promise.all(result) // 將兩個承諾都等到後才執行
-                    const newList = results.map((item) => item[0]) // 把多個陣列合併成單一陣列
-                    // console.log(newList)
-                    // ...把此格式改成加入購物車的格式，再次呼叫一次新增購物車方法
-                } catch (error) {}
-            })()
-        }
-    }, [])
-
     const typeList = [
         { title: '全選' },
         { title: '商品資訊' },
@@ -221,6 +183,7 @@ function ShoppingCartSection() {
                         <ul className='shopping-type-list'>
                             {typeList.map((item, index) => (
                                 <li key={index} className='shopping-type-items'>
+                                    {/* 當標題是全選才會有checkbox，刪除的話則是對應按鈕，最後則是各欄位名稱 */}
                                     {item.title === '全選' ? (
                                         <>
                                             <input
