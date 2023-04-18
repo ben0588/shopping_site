@@ -39,7 +39,7 @@ const HeaderLogoContainer = styled.h1`
 function Logo({ onTitleUpdate }) {
     const { theme } = useContext(ThemeContext) // 引用主題色
     const { contextValue } = useContext(AuthContext) // 驗證會員context環境
-    const { handlerTitleUpdate } = contextValue
+    const { handlerTitleUpdate, handleIsGoToTop } = contextValue
     // 未來背景圖片可更改成 png 一樣可達成動態 H1 標籤名稱
     return (
         <HeaderLogoContainer
@@ -52,6 +52,7 @@ function Logo({ onTitleUpdate }) {
                 to='/'
                 onClick={() => {
                     handlerTitleUpdate && handlerTitleUpdate('首頁')
+                    handleIsGoToTop && handleIsGoToTop()
                 }}
             >
                 源點。線上網球購物中心
