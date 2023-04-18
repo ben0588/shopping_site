@@ -64,13 +64,9 @@ function HomeSellingSection({ appRef }) {
                         'New Technology'
                     )}
                 </h3>
-                <div
-                    className='home-selling-items'
-                    data-aos='fade-right'
-                    data-aos-offset='300'
-                    data-aos-easing='ease-in-sine'
-                    style={{ border: `2px solid ${theme.foreground}` }}
-                >
+
+                {/* 因手機版本顯示問題，取消第一區塊滑動效果，當手機板第一需快就不會滑動區塊產生 */}
+                <div className='home-selling-items' style={{ border: `2px solid ${theme.foreground}` }}>
                     {contextValue.state.isLoading ? (
                         <Skeleton className='home-selling-img' />
                     ) : (
