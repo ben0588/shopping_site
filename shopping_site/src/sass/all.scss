@@ -15,11 +15,13 @@
 // @import url('https://fonts.googleapis.com/css2?family=Microsoft+JhengHei'); // 微軟正黑體
 
 @import url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
+@import url('/fonts/NotoSansTC-Light.otf');
 @font-face {
     font-family: 'Noto Sans TC';
+    src: local('/fonts/NotoSansTC-Light.otf');
     src: local('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
-    src: url('./fonts/NotoSansTC-Light.otf') format('opentype');
-    src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf') format('opentype');
+    src: url('/fonts/NotoSansTC-Light.otf');
+    src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
 }
 
 // abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
