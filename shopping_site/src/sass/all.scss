@@ -17,7 +17,9 @@
 @import url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
 @font-face {
     font-family: 'Noto Sans TC';
-    src: url(./fonts/NotoSansTC-Light.otf);
+    src: local('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
+    src: url('./fonts/NotoSansTC-Light.otf') format('opentype');
+    src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf') format('opentype');
 }
 
 // abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
