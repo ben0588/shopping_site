@@ -9,6 +9,7 @@ import { ReactComponent as LineIcon } from '../../images/icon/media/line_logo_ic
 import { ReactComponent as TwitchIcon } from '../../images/icon/media/twitch_logo_icon.svg'
 import payment from '../../images/icon/payment/payment.png'
 import { Link } from 'react-router-dom'
+import { BsGithub } from 'react-icons/bs'
 
 const aboutList = [
     { title: '公司簡介', patch: '/' },
@@ -109,7 +110,6 @@ function Footer() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 aria-label='twitter-link'
-
                             >
                                 <TwitterIcon />
                             </a>
@@ -121,7 +121,6 @@ function Footer() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 aria-label='youtube-link'
-
                             >
                                 <YoutubeIcon />
                             </a>
@@ -133,7 +132,6 @@ function Footer() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 aria-label='twitch-link'
-
                             >
                                 <TwitchIcon />
                             </a>
@@ -145,7 +143,6 @@ function Footer() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 aria-label='line-link'
-
                             >
                                 <LineIcon />
                             </a>
@@ -157,9 +154,19 @@ function Footer() {
                                 target='_blank'
                                 rel='noopener noreferrer'
                                 aria-label='linkedin-link'
-
                             >
                                 <LinkedinIcon />
+                            </a>
+                        </li>
+                        <li className='footer-media-items'>
+                            <a
+                                href='https://github.com/ben0588'
+                                className='github-link'
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label='github-link'
+                            >
+                                <BsGithub />
                             </a>
                         </li>
                     </ul>
@@ -175,7 +182,20 @@ function Footer() {
                 This site is for non-commercial use only If it causes copyright issues, please write to me and I will
                 replace it immediately
             </small>
-            <small className='footer-bottom-small'>Copyright ©2023 ORIGINTENNIS-DEMO All Rights Reserved</small>
+            <small className='footer-bottom-small'>
+                Copyright ©2023
+                <a
+                    href='https://github.com/ben0588'
+                    target='_blank'
+                    aria-label='github-link'
+                    rel='noopener noreferrer'
+                    className='github-link-my'
+                    title='訪問作者GitHub連結'
+                >
+                    Ben0588
+                    <BsGithub />
+                </a>
+            </small>
         </footer>
     )
 }
