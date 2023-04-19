@@ -16,7 +16,9 @@
 
 @font-face {
     font-family: 'Noto Sans TC';
-    src: url('/fonts/NotoSansTC-Light.otf') format('opentype');
+    src: url('../fonts/NotoSansTC-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 // abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
