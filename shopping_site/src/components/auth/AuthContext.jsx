@@ -4,9 +4,9 @@ import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { useCallback } from 'react'
 import { useReducer } from 'react'
 import { useMemo } from 'react'
-// import { auth, provider } from '../../components/auth/firebase' // 使用 firebase 環境
 import { signInWithPopup } from 'firebase/auth' // 啟用 firebase google 彈跳式登入
 import { userInfo, userThirdGithubLogin, userThirdLineGetData, userThirdLineLogin, userThirdLogin } from '../../api/api'
+// import { auth, provider } from '../../components/auth/firebase' // 使用 firebase 環境 // 2023/4/19 關閉
 
 import jwt_decode from 'jwt-decode' // 解碼 jwt token
 import Swal from 'sweetalert2' // 使用 sweetalert2 彈跳視窗套件
@@ -346,21 +346,21 @@ export const AuthProvider = ({ children }) => {
     // }
 
     // 使用 firebase 處理google第三方登入
-    const handleFirebaseGoogleLogin = async () => {
-        // const result = await signInWithPopup(auth, provider)  // 2023/4/12 關閉
-        // if (result) {
-        //     // 改成要傳入api的格式
-        //     const jsonData = {
-        //         user: {
-        //             email: `go_${result.user.email}`,
-        //             name: result.user.displayName,
-        //             password: result.user.uid,
-        //             registerOrigin: 'Google', // 註冊來源
-        //         },
-        //     }
-        //     handleThirdLogin(jsonData) // 處理第三方登入api
-        // }
-    }
+    // const handleFirebaseGoogleLogin = async () => {
+    //     const result = await signInWithPopup(auth, provider) // 2023/4/12 關閉
+    //     if (result) {
+    //         // 改成要傳入api的格式
+    //         const jsonData = {
+    //             user: {
+    //                 email: `go_${result.user.email}`,
+    //                 name: result.user.displayName,
+    //                 password: result.user.uid,
+    //                 registerOrigin: 'Google', // 註冊來源
+    //             },
+    //         }
+    //         handleThirdLogin(jsonData) // 處理第三方登入api
+    //     }
+    // }
 
     // Github 登入 ( 因為後端 CROS 關係自己用後端 ) ( 因為前台透過OAuth網址授權後回首頁會刷新 )
     useEffect(() => {
@@ -446,7 +446,7 @@ export const AuthProvider = ({ children }) => {
             handleFbLogin, // facebook 官方專屬登入方法
             handleFbLogout, // facebook 官方專屬登出方法
             // handleCredentialResponse, // google 官方專屬登入方法 (改名報錯)
-            handleFirebaseGoogleLogin, // 使用 firebase 處理google第三方登入
+            // handleFirebaseGoogleLogin, // 使用 firebase 處理google第三方登入
             locationToken, // 本地端 token 紀錄 綁定
             getTitleText, // 網頁標頭文字
             handleIsGoToTop, // 是否回到頂端
@@ -462,7 +462,7 @@ export const AuthProvider = ({ children }) => {
             handleThirdLogin,
             handleFbLogin,
             // handleCredentialResponse,
-            handleFirebaseGoogleLogin,
+            // handleFirebaseGoogleLogin,
             locationToken,
             getTitleText,
         ]

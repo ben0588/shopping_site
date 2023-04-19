@@ -13,7 +13,7 @@
 使用者可以將自己需要的產品添加到購物車中，並在需要的時候進行結算。也可以將未來想購買的商品加入願望清單中。
 
 ### 注意事項 : 
-因雲端資料庫部屬問題，會員系統僅提供影片操作展示，[影片網址(影片處02:51~07:36)](https://www.awesomescreenshot.com/video/16283160?key=a5f5f52d8bf8355914bac61a613295fe)，請見諒，後端程式架構請查看此專案 : [後端GitHub](https://github.com/ben0588/node_shopping_site)
+會員系統僅提供影片操作展示，[影片網址](https://www.awesomescreenshot.com/video/16645056?key=9c2238c9526bd23680646344798f8527)，請見諒，後端程式架構請查看此專案 : [後端GitHub](https://github.com/ben0588/node_shopping_site)
 
 ## 設計相關
 -  RWD 響應式 設計範圍:  
@@ -94,7 +94,6 @@ npm start
 -   react-toastify - 提示視窗樣式套件
 -   sweetalert2 - 提示視窗樣式套件
 -   AOS.js - 視差滾動設計
--   GSAP.js - 視差滾動設計
 -   JWT - 驗證 token
 
 ## 後端使用技術
