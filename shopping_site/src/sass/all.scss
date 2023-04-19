@@ -18,9 +18,9 @@
 @import url('/fonts/NotoSansTC-Light.otf');
 @font-face {
     font-family: 'Noto Sans TC';
-    src: local('/fonts/NotoSansTC-Light.otf');
+    src: local('./fonts/NotoSansTC-Light.otf');
     src: local('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
-    src: url('/fonts/NotoSansTC-Light.otf');
+    src: url('./fonts/NotoSansTC-Light.otf');
     src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf');
 }
 
