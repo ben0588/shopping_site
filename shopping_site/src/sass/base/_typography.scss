@@ -30,3 +30,16 @@ img {
 // * {
 //     outline: 1px solid rgb(255, 0, 0);
 // }
+// @font-face {
+//     font-family: 'Noto Sans TC';
+//     src: url('../fonts/NotoSansTC-Light.otf') format('opentype');
+//     // src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf') format('opentype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
