@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/shopping_site/static/css/main.728abe13.css",
+    "main.css": "/shopping_site/static/css/main.b3238bf3.css",
     "main.js": "/shopping_site/static/js/main.582bb64d.js",
     "static/js/787.b12c02bd.chunk.js": "/shopping_site/static/js/787.b12c02bd.chunk.js",
-    "static/media/NotoSansTC-Light.otf": "/shopping_site/static/media/NotoSansTC-Light.cbcea44e8d20d4636c3d.otf",
     "static/media/ben0588Demo.png": "/shopping_site/static/media/ben0588Demo.f051e90f359bdb71503a.png",
     "static/media/m-07.jpg": "/shopping_site/static/media/m-07.6a984b268f0b430df657.jpg",
     "static/media/banner_01.jpg": "/shopping_site/static/media/banner_01.967a72340b775468ca23.jpg",
@@ -69,12 +68,12 @@
     "static/media/caret_right_icon.svg": "/shopping_site/static/media/caret_right_icon.d1a5d7386302b0274b08fbe6d8c3be3c.svg",
     "static/media/caret_left_icon.svg": "/shopping_site/static/media/caret_left_icon.44281e9401744f656bfaa3673f94baf7.svg",
     "static/media/email_icon.svg": "/shopping_site/static/media/email_icon.b4731eb9dbea69341bd0097937440f0f.svg",
-    "main.728abe13.css.map": "/shopping_site/static/css/main.728abe13.css.map",
+    "main.b3238bf3.css.map": "/shopping_site/static/css/main.b3238bf3.css.map",
     "main.582bb64d.js.map": "/shopping_site/static/js/main.582bb64d.js.map",
     "787.b12c02bd.chunk.js.map": "/shopping_site/static/js/787.b12c02bd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.728abe13.css",
+    "static/css/main.b3238bf3.css",
     "static/js/main.582bb64d.js"
   ]
 }
