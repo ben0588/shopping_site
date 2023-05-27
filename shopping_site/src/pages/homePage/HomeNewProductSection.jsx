@@ -131,7 +131,7 @@ function HomeNewProductSection() {
                     slidesPerView={5} // 起始可以看到幾張
                     spaceBetween={20} // 每塊間隔
                     className='mySwiper'
-                    // 增加RWD斷點設計
+                    // 增加RWD斷點設計(>=)
                     breakpoints={{
                         1140: {
                             // width: 1140,
@@ -145,14 +145,14 @@ function HomeNewProductSection() {
                             // width: 568,
                             slidesPerView: 2,
                         },
-                        414: {
-                            // width: 414,
-                            slidesPerView: 1,
-                        },
-                        375: {
-                            // width: 375,
-                            slidesPerView: 1,
-                        },
+                        // 414: {
+                        //     // width: 414,
+                        //     slidesPerView: 1,
+                        // },
+                        // 375: {
+                        //     // width: 375,
+                        //     slidesPerView: 1,
+                        // },
                         320: {
                             // width: 320,
                             slidesPerView: 1,

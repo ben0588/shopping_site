@@ -4,274 +4,6 @@
     // padding: 100px 0 0;
     margin: 100px auto 0;
 
-    // slogan 口號設置
-    .home-selling-slogan {
-        text-align: center;
-        width: 100%;
-        font-size: 2.5rem;
-        font-weight: bolder;
-
-        @include media768 {
-            width: 100%;
-            font-size: 2rem;
-        }
-
-        @include media320 {
-            font-size: 1.8rem;
-        }
-    }
-
-    // 副口號標題
-    .home-selling-subslogan {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bolder;
-        color: #00b894;
-        padding: 0 0 40px;
-    }
-
-    // skeleton 讀取替代樣式
-    .home-selling-subslogan-skeleton {
-        margin: 5px 0 0;
-        width: 50%;
-        height: 40px;
-    }
-
-    // 銷售區塊內容(第一個區塊)
-    .home-selling-content {
-        max-width: 80%;
-        width: 80%;
-        margin: 0 auto;
-        position: relative;
-
-        @include media768 {
-            max-width: 90%;
-            width: 90%;
-        }
-
-        // 區塊內層設定
-        .home-selling-items {
-            max-width: 600px;
-            width: 50%;
-
-            padding: 150px 0;
-            position: relative;
-            // background: url('../images/other/s-10.jpg') no-repeat;
-            // background-position: 50% 50%;
-            // background-size: cover;
-            // object-fit: cover;
-            // object-position: center;
-            transition: all 1s ease-in-out;
-            border-radius: 5px;
-            height: auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-
-            // 區塊內圖片設定
-            .home-selling-img {
-                position: absolute;
-                max-width: 600px;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                object-fit: cover;
-                object-position: left center;
-                transition: all 1s ease-in-out;
-                border-radius: 5px;
-
-                &:hover {
-                    transform: scale(0.95);
-                }
-
-                &:active {
-                    transform: scale(0.95);
-                }
-            }
-
-            @include media568 {
-                max-width: 100%;
-                width: 100%;
-                padding: 100px 0;
-            }
-
-            // 標題區塊、文字設置
-            .home-selling-title {
-                width: 50%;
-                padding: 30px 0;
-                background-color: #00b893c7;
-                // background-color: rgba(0, 0, 0, 0.65);
-
-                border: 2px solid #156453;
-                color: #f2f2f2;
-                text-shadow: 0px 0px 5px #111414;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(50%, -50%);
-                text-align: center;
-                border-radius: 5px;
-                font-size: 1.5rem;
-                font-weight: bolder;
-                white-space: nowrap;
-                line-height: 2rem;
-                backdrop-filter: blur(5px);
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-
-                // &::before {
-                //     content: '';
-                //     position: absolute;
-                //     width: 100%;
-                //     height: 100%;
-                //     border-radius: 4px;
-                //     background-color: #b80012;
-                //     bottom: 0;
-                //     left: 0;
-                //     transform-origin: right;
-                //     transform: scaleX(0);
-                //     transition: transform 0.3s ease-in-out;
-                //     z-index: -1;
-                // }
-
-                // &:hover::before {
-                //     transform-origin: left;
-                //     transform: scaleX(1);
-                //     backdrop-filter: blur(5px);
-                // }
-
-                @include media768 {
-                    width: 100%;
-                    left: 0;
-                }
-                @include media568 {
-                    width: 50%;
-                    left: 0;
-                    background-color: #00b89370;
-                }
-                @include media414 {
-                    width: 100%;
-                    left: -50%;
-                }
-            }
-
-            // 連結按鈕設定(通用)
-            .home-selling-btn {
-                position: absolute;
-                // bottom: 10%;
-                // left: 10%;
-                display: inline-block;
-                width: 25%;
-                padding: 10px 0;
-                background-color: #00b894;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-                font-size: 1rem;
-                font-weight: bolder;
-                border: 2px solid #111414;
-                color: #111414;
-                transition: all 0.3s ease-in-out;
-                z-index: 2;
-                overflow: hidden;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-
-                @include media768 {
-                    width: 50%;
-                }
-                @include media414 {
-                    width: 100%;
-                }
-
-                // 按鈕動態效果
-                &:hover,
-                &:active {
-                    color: #f2f2f2;
-
-                    .home-selling-icon {
-                        fill: #f2f2f2;
-                    }
-                }
-            }
-
-            // 第一顆靠左的按鈕
-            .home-selling-left-btn {
-                bottom: 5%;
-                left: 5%;
-                // 背景動態效果
-                &::before {
-                    content: '';
-                    background-color: #b80012;
-                    position: absolute;
-                    top: 0;
-                    left: -20%;
-                    transform: translate(-50%, -50%);
-                    z-index: -1;
-                    transition: all 0.5s ease;
-                    width: 0;
-                    height: 100%;
-                    transform: translate(0, 0) matrix(1, 0, 1.5, 1.5, 0, 0);
-                }
-
-                // 伸縮長度
-                &:hover::before {
-                    width: 150%;
-                }
-                &:active::before {
-                    width: 150%;
-                }
-
-                @include media768 {
-                    left: 5%;
-                }
-
-                @include media568 {
-                    left: 25%;
-                }
-                @include media414 {
-                    left: 0;
-                }
-            }
-
-            // 第二顆靠右的按鈕
-            .home-selling-right-btn {
-                right: 5%;
-                bottom: 5%;
-                &::before {
-                    content: '';
-                    background-color: #b80012;
-                    position: absolute;
-                    top: 0;
-                    right: -15%;
-                    transform: translate(-50%, -50%);
-                    z-index: -1;
-                    transition: all 0.5s ease;
-                    width: 0;
-                    height: 100%;
-                    transform: translate(0, 0) matrix(1, 0, 1.5, 1.5, 0, 0);
-                }
-
-                // 伸縮長度
-                &:hover::before {
-                    width: 150%;
-                }
-                &:active::before {
-                    width: 150%;
-                }
-
-                @include media768 {
-                    right: 5%;
-                }
-
-                @include media568 {
-                    right: 25%;
-                }
-                @include media414 {
-                    right: 0;
-                }
-            }
-        }
-    }
-
     // 設定第二個區塊靠右
     div:nth-of-type(2) {
         margin: 20px auto 0;
@@ -285,98 +17,354 @@
             width: 50%;
             padding: 150px 0;
             position: relative;
-            // background: url('../images/other/s-09.jpg') no-repeat center center;
-            // background-size: cover;
-            // object-fit: cover;
-            // object-position: center;
-            // height: auto;
 
             @include media568 {
                 max-width: 100%;
                 width: 100%;
                 padding: 100px 0;
             }
+        }
+        // 第二個標題區塊、文字設置
+        .home-selling-title {
+            width: 50%;
+            padding: 30px 0;
+            background-color: #00b893c7;
+            border: 2px solid #156453;
+            color: #fff;
+            text-shadow: 0px 0px 5px #111414;
+            position: absolute;
+            left: -50%;
+            top: 50%;
+            transform: translate(50%, -50%);
+            text-align: center;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            white-space: nowrap;
+            line-height: 2rem;
+            backdrop-filter: blur(5px);
 
-            // 第二個標題區塊、文字設置
-            .home-selling-title {
+            @include media768 {
+                width: 100%;
+                left: -100%;
+            }
+            @include media568 {
                 width: 50%;
-                padding: 30px 0;
-                background-color: #00b893c7;
-                border: 2px solid #156453;
-                color: #fff;
-                text-shadow: 0px 0px 5px #111414;
-                position: absolute;
+                left: 0;
+                background-color: #00b89370;
+            }
+            @include media414 {
+                width: 100%;
                 left: -50%;
-                top: 50%;
-                transform: translate(50%, -50%);
-                text-align: center;
-                border-radius: 5px;
-                font-size: 1.5rem;
-                font-weight: bolder;
-                white-space: nowrap;
-                line-height: 2rem;
-                backdrop-filter: blur(5px);
-
-                @include media768 {
-                    width: 100%;
-                    left: -100%;
-                }
-                @include media568 {
-                    width: 50%;
-                    left: 0;
-                    background-color: #00b89370;
-                }
-                @include media414 {
-                    width: 100%;
-                    left: -50%;
-                }
             }
         }
     }
+}
 
-    // 小箭頭符號icon設定
-    .home-selling-icon {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        left: 0;
-        fill: #111414;
-        transition: all 0.3s ease-in-out;
+// 區塊內圖片設定
+.home-selling-img {
+    position: absolute;
+    max-width: 600px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: left center;
+    transition: all 1s ease-in-out;
+    border-radius: 5px;
 
-        @include animate(iconMove, 2s, ease-in-out, infinite);
-        @include keyframes(iconMove) {
-            0% {
+    &:hover {
+        transform: scale(0.95);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+// slogan 口號設置
+.home-selling-slogan {
+    text-align: center;
+    width: 100%;
+    font-size: 2.5rem;
+    font-weight: bolder;
+
+    @include media768 {
+        width: 100%;
+        font-size: 2rem;
+    }
+
+    @include media320 {
+        font-size: 1.8rem;
+    }
+}
+
+// 副口號標題
+.home-selling-subslogan {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #00b894;
+    padding: 0 0 40px;
+}
+
+// skeleton 讀取替代樣式
+.home-selling-subslogan-skeleton {
+    margin: 5px 0 0;
+    width: 50%;
+    height: 40px;
+}
+
+// 連結按鈕設定(通用)
+.home-selling-btn {
+    position: absolute;
+    // bottom: 10%;
+    // left: 10%;
+    display: inline-block;
+    width: 25%;
+    padding: 10px 0;
+    background-color: #00b894;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bolder;
+    border: 2px solid #111414;
+    color: #111414;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+    @include media768 {
+        width: 50%;
+    }
+    @include media414 {
+        width: 100%;
+    }
+
+    // 按鈕動態效果
+    &:hover,
+    &:active {
+        color: #f2f2f2;
+
+        .home-selling-icon {
+            fill: #f2f2f2;
+        }
+    }
+}
+
+// 銷售區塊內容(第一個區塊)
+.home-selling-content {
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+
+    @include media768 {
+        max-width: 90%;
+        width: 90%;
+    }
+
+    // 第一區塊區塊內層設定
+    .home-selling-items {
+        max-width: 600px;
+        width: 50%;
+        padding: 150px 0;
+        position: relative;
+        transition: all 1s ease-in-out;
+        border-radius: 5px;
+        height: auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+        @include media568 {
+            max-width: 100%;
+            width: 100%;
+            padding: 100px 0;
+        }
+
+        // 標題區塊、文字設置
+        .home-selling-title {
+            width: 50%;
+            padding: 30px 0;
+            background-color: #00b893c7;
+            // background-color: rgba(0, 0, 0, 0.65);
+
+            border: 2px solid #156453;
+            color: #f2f2f2;
+            text-shadow: 0px 0px 5px #111414;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(50%, -50%);
+            text-align: center;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            white-space: nowrap;
+            line-height: 2rem;
+            backdrop-filter: blur(5px);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+
+            // &::before {
+            //     content: '';
+            //     position: absolute;
+            //     width: 100%;
+            //     height: 100%;
+            //     border-radius: 4px;
+            //     background-color: #b80012;
+            //     bottom: 0;
+            //     left: 0;
+            //     transform-origin: right;
+            //     transform: scaleX(0);
+            //     transition: transform 0.3s ease-in-out;
+            //     z-index: -1;
+            // }
+
+            // &:hover::before {
+            //     transform-origin: left;
+            //     transform: scaleX(1);
+            //     backdrop-filter: blur(5px);
+            // }
+
+            @include media768 {
+                width: 100%;
                 left: 0;
             }
-            50% {
+            @include media568 {
+                width: 50%;
+                left: 0;
+                background-color: #00b89370;
+            }
+            @include media414 {
+                width: 100%;
+                left: -50%;
+            }
+        }
+
+        // 第一顆靠左的按鈕
+        .home-selling-left-btn {
+            bottom: 5%;
+            left: 5%;
+            // 背景動態效果
+            &::before {
+                content: '';
+                background-color: #b80012;
+                position: absolute;
+                top: 0;
+                left: -20%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                transition: all 0.5s ease;
+                width: 0;
+                height: 100%;
+                transform: translate(0, 0) matrix(1, 0, 1.5, 1.5, 0, 0);
+            }
+
+            // 伸縮長度
+            &:hover::before {
+                width: 150%;
+            }
+            &:active::before {
+                width: 150%;
+            }
+
+            @include media768 {
                 left: 5%;
             }
-            100% {
+
+            @include media568 {
+                left: 25%;
+            }
+            @include media414 {
                 left: 0;
             }
         }
-    }
 
-    // 控制icon在文字右側出現
-    .home-selling-left-icon {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        right: 0;
-        fill: #111414;
-        transition: all 0.3s ease-in-out;
-
-        @include animate(iconRightMove, 2s, ease-in-out, infinite);
-        @include keyframes(iconRightMove) {
-            0% {
-                right: 0;
+        // 第二顆靠右的按鈕
+        .home-selling-right-btn {
+            right: 5%;
+            bottom: 5%;
+            &::before {
+                content: '';
+                background-color: #b80012;
+                position: absolute;
+                top: 0;
+                right: -15%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                transition: all 0.5s ease;
+                width: 0;
+                height: 100%;
+                transform: translate(0, 0) matrix(1, 0, 1.5, 1.5, 0, 0);
             }
-            50% {
+
+            // 伸縮長度
+            &:hover::before {
+                width: 150%;
+            }
+            &:active::before {
+                width: 150%;
+            }
+
+            @include media768 {
                 right: 5%;
             }
-            100% {
+
+            @include media568 {
+                right: 25%;
+            }
+            @include media414 {
                 right: 0;
             }
+        }
+    }
+}
+
+// 小箭頭符號icon設定
+.home-selling-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    fill: #111414;
+    transition: all 0.3s ease-in-out;
+
+    @include animate(iconMove, 2s, ease-in-out, infinite);
+    @include keyframes(iconMove) {
+        0% {
+            left: 0;
+        }
+        50% {
+            left: 5%;
+        }
+        100% {
+            left: 0;
+        }
+    }
+}
+
+// 控制icon在文字右側出現
+.home-selling-left-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 0;
+    fill: #111414;
+    transition: all 0.3s ease-in-out;
+
+    @include animate(iconRightMove, 2s, ease-in-out, infinite);
+    @include keyframes(iconRightMove) {
+        0% {
+            right: 0;
+        }
+        50% {
+            right: 5%;
+        }
+        100% {
+            right: 0;
         }
     }
 }

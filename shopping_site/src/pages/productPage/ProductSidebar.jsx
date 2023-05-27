@@ -7,7 +7,7 @@ import { NavLink, useNavigate, useOutletContext } from 'react-router-dom'
 import styled from 'styled-components'
 const MenuSidebar = styled.aside`
     // 控制手機板與桌機板顯示寬度
-    width: ${(props) => (props.isOpen ? '50%' : '20%')};
+    width: ${(props) => (props.isOpen ? '50%' : '25%')};
 
     // 控制手機板顯示，桌機板隱藏設定
     @media screen and (max-width: 568px) {

@@ -138,13 +138,13 @@ const NavbarAllProduct = ({ display, handledShowDisplay, handledHiddenDisplay })
             {typeList.map((item, index) => {
                 return (
                     <ul key={index}>
-                        <h3>
+                        <h3 className='product-type-title'>
                             {/* 進入主類別 */}
                             <Link to={`/product/?category=${item.type}`}>{item.type}</Link>
                         </h3>
                         {item.subType.map((item, index) => {
                             return (
-                                <li key={index}>
+                                <li key={index} className='product-type-items'>
                                     {/* 進入子類別 */}
                                     <Link
                                         to={`/product/?subcategory=${item.subType}`}
@@ -152,6 +152,7 @@ const NavbarAllProduct = ({ display, handledShowDisplay, handledHiddenDisplay })
                                             handledHiddenDisplay && handledHiddenDisplay()
                                             handleIsGoToTop && handleIsGoToTop()
                                         }}
+                                        className='product-type-link'
                                     >
                                         {item.subType}
                                     </Link>

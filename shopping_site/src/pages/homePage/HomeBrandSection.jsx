@@ -149,7 +149,7 @@ function HomeBrandSection() {
                             // width: >= 569,
                             slidesPerView: 10,
                         },
-                        414: {
+                        415: {
                             // width: >= 414,
                             slidesPerView: 7,
                         },

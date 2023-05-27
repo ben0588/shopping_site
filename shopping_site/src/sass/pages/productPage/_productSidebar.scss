@@ -1,6 +1,6 @@
 // 左側欄位 (選取菜單)
 .product-sidebar-container {
-    width: 20%;
+    width: 25%;
     min-height: 500px;
     height: 100%;
     // padding: 50px 10px 0;
@@ -11,136 +11,177 @@
         // display: none;
         // 改用 styled 方式進行隱藏，用參數進行開關
     }
+}
 
-    // nav 標籤層
-    .product-sidebar-menu {
-        width: 100%;
-        padding: 0 0 10px;
-        // nav 內層區塊 ul
-        .product-sidebar-inner {
-            // 全部商品 大標題
-            .product-sidebar-title {
-                // background-color: #c42d2d;
-                width: 100%;
-                cursor: pointer;
-                padding: 8px 10px;
-                outline: none;
-                border: none;
-                text-align: left;
-                font-size: 1.8rem;
-                font-weight: bolder;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin: 0 0 5px;
+// 商品左側選單設定
+.product-sidebar-inner {
+    width: 85%;
+    margin: 0 auto;
 
-                .product-title-icon {
-                    height: 25px;
-                    width: 25px;
-                }
-            }
-            // 每個選單按鈕區塊 li
-            .product-sidebar-items {
-                // border-top: 1px solid #dfe6e9;
-                position: relative;
-                padding: 10px 0;
+    @include media1140 {
+        margin: 0 30px;
+    }
 
-                // 上方的格線樣式
-                &::after {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background-color: #dfe6e9;
-                    // width: 85%;
-                    width: 95%;
-                    height: 2px;
-                }
+    @include media768 {
+        margin: 0 8px;
+    }
+}
+// 全部商品名稱
+.product-sidebar-title {
+    font-size: 1.5rem;
+    &:hover {
+        color: #4a3ac2;
+    }
+}
 
-                // 主種類按鈕樣式
-                .product-sidebar-btn {
-                    background-color: #fff;
-                    width: 100%;
-                    cursor: pointer;
-                    // padding: 5px 10px;
-                    outline: none;
-                    border: none;
-                    text-align: left;
-                    font-size: 1rem;
-                    font-weight: bolder;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
+// // 每個 li 區塊設定
+// .product-sidebar-items {
+//     font-size: 1rem;
 
-                    // 增加 a 連結可點擊範圍
-                    a {
-                        padding: 5px 10px;
+//     &:hover,
+//     &:active {
+//         // 類型文字變色
+//         a {
+//             color: #00b894;
+//         }
 
-                        &:hover {
-                            color: #00b894;
-                        }
-                    }
-                }
-                // 點開時給予的樣式
-                .sidebar-btn-active {
-                    background-color: #00b094;
+//         // 控制被選定狀態的按鈕不變色
+//         .sidebar-btn-active a {
+//             color: #000;
+//         }
+//     }
+// }
 
-                    // 在背景是選擇的情況下，文字顏色不更動
-                    a {
-                        &:hover {
-                            color: #000000;
-                        }
-                    }
-                }
+// 類型標題內層
+// .product-sidebar-link {
+//     display: inline-block;
+//     width: 100%;
+//     &:hover {
+//         background: #000;
+//     }
+// }
 
-                // icon 區塊顯示
-                .product-sidebar-icon {
-                    display: flex;
-                    // float: right;
-                    // background: blue;
-                    transition: all 0.5s ease-in-out;
-                    width: 25px;
-                    height: 25px;
-                    justify-content: center;
-                    align-items: center;
-                }
+// nav 標籤層
+.product-sidebar-menu {
+    width: 100%;
+    padding: 20px 0 10px;
+}
 
-                // 顯示子種類的區塊
-                .product-sidebar-text {
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-direction: column;
-                    width: 100%;
-                    padding: 0 18px;
-                    overflow: hidden; // 隱藏多出去的區塊
-                    height: 0; // 隱藏高度
-                    background-color: #fff;
+// 大標題
+.product-sidebar-title {
+    width: 100%;
+    cursor: pointer;
+    padding: 8px 10px;
+    outline: none;
+    border: none;
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 5px;
+}
 
-                    // 每個文字連結樣式
-                    .product-sidebar-link {
-                        display: block;
-                        font-weight: bolder;
-                        padding: 8px 0 5px 10px; // 文字往右
+.product-title-icon {
+    height: 25px;
+    width: 25px;
+}
 
-                        // @include media768 {
-                        //     font-size: 0.9rem;
-                        // }
+// 每個選單按鈕區塊 li
+.product-sidebar-items {
+    position: relative;
+    padding: 2px 0;
 
-                        &:hover,
-                        &:active {
-                            color: #00b094;
-                            // color: DarkTurquoise;
-                        }
-                    }
-                }
-                // 展開區塊
-                .open {
-                    height: auto;
-                    padding: 5px 18px;
-                }
-            }
+    // 上方的格線樣式
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #dfe6e9;
+        // width: 85%;
+        width: 95%;
+        height: 2px;
+    }
+}
+
+// 主種類按鈕樣式
+.product-sidebar-btn {
+    background-color: #fff;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    &:hover,
+    &:active {
+        // 類型文字變色
+        a {
+            color: #00b894;
+        }
+
+        // 控制被選定狀態的按鈕不變色
+        &.sidebar-btn-active a {
+            color: #000;
         }
     }
+}
+
+// 點開時給予的樣式
+.sidebar-btn-active {
+    background-color: #00b094;
+
+    // 在背景是選擇的情況下，文字顏色不更動
+    a {
+        &:hover {
+            color: #000000;
+        }
+    }
+}
+
+// icon 區塊顯示
+.product-sidebar-icon {
+    display: flex;
+    // float: right;
+    // background: blue;
+    transition: all 0.5s ease-in-out;
+    width: 25px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+// 顯示子種類的區塊
+.product-sidebar-text {
+    overflow: hidden; // 隱藏多出去的區塊
+    height: 0; // 隱藏高度
+    background-color: #fff;
+}
+
+// 每個文字連結樣式
+.product-sidebar-link {
+    display: block;
+    width: 100%;
+    font-weight: bolder;
+    padding-left: 15px; // 文字靠左
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:hover,
+    &:active {
+        background: #e6ebea6c;
+    }
+}
+// 展開區塊
+.open {
+    height: auto;
 }

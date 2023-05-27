@@ -6,241 +6,237 @@
     position: fixed;
     z-index: 99; // 顯示最上層
     background-color: #fff;
+}
 
-    // ---- top bar start ----
-    // 最上層提示優惠區塊
-    .navbar-topTip-container {
-        width: 100%;
+// ---- top bar start ----
 
-        // 文字區塊顯示
-        .navbar-topTip-text {
-            width: 100%;
-            padding: 7px 0;
-            background-color: #00b894;
-            text-align: center;
-        }
-    }
-    // 最外層容器
-    .header-top-container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 2px 0 1px;
-    }
-    // 最外層容器內距離
-    .header-top-inner-container {
-        max-width: 100%;
-        width: 70%;
-        height: 100%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        position: relative;
+// 文字區塊顯示
+.navbar-topTip-text {
+    width: 100%;
+    padding: 7px 0;
+    background-color: #00b894;
+    text-align: center;
+}
+// 最外層容器
+.header-top-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2px 0 1px;
+}
+// 最外層容器內距離
+.header-top-inner-container {
+    max-width: 100%;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
 
-        @include media414 {
-            width: 100vw;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-
-        @include media375 {
-            font-size: 0.8rem;
-        }
-
-        // 讓li標籤後面新增一個|分隔符號
-        li:nth-of-type(1)::after {
-            content: '|';
-            position: absolute;
-            right: -10%;
-            width: 3px;
-            height: 20px;
-
-            @include media320 {
-                right: 2%;
-                top: 30%;
-            }
-        }
-        li:nth-of-type(2)::after {
-            content: '|';
-            position: absolute;
-            right: -10%;
-            width: 3px;
-            height: 20px;
-
-            @include media320 {
-                right: 2%;
-                top: 30%;
-            }
-        }
-    }
-
-    // 每個項目設定
-    .header-top-items {
-        padding: 0 0 0 20px;
-        height: 100%;
-        display: flex;
+    @include media414 {
+        width: 100vw;
         justify-content: center;
-        align-items: center;
-        position: relative;
+        font-size: 0.9rem;
+    }
 
-        // 每個文字連結樣式
-        .header-top-text {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: black;
-            transition: color 0.3s ease-in-out;
-        }
+    @include media375 {
+        font-size: 0.8rem;
+    }
 
-        // 優化互動性 ( svg icon & font-color )
-        &:hover .header-top-icon {
-            fill: #00b894;
-        }
-        &:hover a {
-            color: #00b894;
-        }
-        &:active .header-top-icon {
-            fill: #0984e3;
-        }
-        &:active a {
-            color: #0984e3;
-        }
-
-        @include media375 {
-            width: 50%;
-        }
+    // 讓li標籤後面新增一個|分隔符號
+    li:nth-of-type(1)::after {
+        content: '|';
+        position: absolute;
+        right: -10%;
+        width: 3px;
+        height: 20px;
 
         @include media320 {
-            padding: 0 5px 0 0;
+            right: 2%;
+            top: 30%;
         }
-
-        // 購物車顯示數量圓形
-        .header-cart-number {
-            width: 25px;
-            height: 25px;
-            background-color: #00b894;
-            color: black;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 0 0 3px;
-        }
-
-        // 購物車小彈窗提示區塊
-        .header-top-cart {
-            display: inline-block;
-            // max-width: 300px;
-            // width: 95%;
-            width: 500px;
-            // height: 300px;
-            height: auto;
-            max-height: 100vh;
-            // background-color: #0984e3;
-            background-color: #fff;
-            color: black;
-            position: absolute;
-            z-index: 20;
-            top: 115%;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: all 0.5 ease-in-out;
-            opacity: 0;
-            border: 2px solid black;
-            overflow: hidden;
-
-            // 每個小區塊
-            .header-cart-items {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                // flex-direction: column;
-                margin: 0 0 5px;
-                border-bottom: 2px solid #00b894;
-                padding: 5px 0 10px;
-                flex-wrap: wrap;
-                user-select: none;
-
-                .header-cart-image {
-                    display: inline-block;
-                    width: 100%;
-                    max-width: 30px;
-                    height: auto;
-                    max-height: 40px;
-                    object-fit: cover;
-                    object-position: center;
-                    border: 1px solid #dfe6e9;
-                    margin: 0 5px 0 0;
-                }
-
-                .header-cart-quantity {
-                    // background-color: black;
-                    // color: #fff;
-                    display: block;
-                    width: 50%;
-                    text-align: right;
-                    position: relative;
-
-                    &:after {
-                        content: 'x';
-                        position: absolute;
-                        right: -20%;
-                    }
-                }
-                .header-cart-price {
-                    // background-color: black;
-                    // color: #fff;
-                    display: block;
-                    width: 50%;
-                    text-align: center;
-                    font-style: italic;
-                    color: #636e72;
-                }
-            }
-        }
-        // 按下加入購物車時 icon 小動畫
-        .header-cart-animate {
-            @include animate(cartAnimate, 1s, ease-in, 0s);
-            @include keyframes(cartAnimate) {
-                0% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-20%);
-                }
-                100% {
-                    transform: translateY(0);
-                }
-            }
-        }
-
-        // 顯示
-        .header-cart-show {
-            @include animate(showCart, 3s, ease-in, 0s);
-            @include keyframes(showCart) {
-                0% {
-                    opacity: 0;
-                }
-                50% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0;
-                }
-            }
-            // overflow: scroll; // 新增區塊滑動效果
-        }
-        // 隱藏
-        .header-cart-hidden {
-            opacity: 0;
-        }
-
-        // 切換主題文字
-        .header-theme-text {
-            padding: 0 0 0 7px;
-        }
-        // ---- top bar end ----
     }
+    li:nth-of-type(2)::after {
+        content: '|';
+        position: absolute;
+        right: -10%;
+        width: 3px;
+        height: 20px;
+
+        @include media320 {
+            right: 2%;
+            top: 30%;
+        }
+    }
+}
+
+// 每個項目設定
+.header-top-items {
+    padding: 0 0 0 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    // 優化互動性 ( svg icon & font-color )
+    &:hover .header-top-icon {
+        fill: #00b894;
+    }
+    &:hover a {
+        color: #00b894;
+    }
+    &:active .header-top-icon {
+        fill: #0984e3;
+    }
+    &:active a {
+        color: #0984e3;
+    }
+
+    @include media375 {
+        width: 50%;
+    }
+
+    @include media320 {
+        padding: 0 5px 0 0;
+    }
+}
+
+// 購物車顯示數量圓形
+.header-cart-number {
+    width: 25px;
+    height: 25px;
+    background-color: #00b894;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 3px;
+}
+
+// 購物車小彈窗提示區塊
+.header-top-cart {
+    display: inline-block;
+    // max-width: 300px;
+    // width: 95%;
+    width: 500px;
+    // height: 300px;
+    height: auto;
+    max-height: 100vh;
+    // background-color: #0984e3;
+    background-color: #fff;
+    color: black;
+    position: absolute;
+    z-index: 20;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5 ease-in-out;
+    opacity: 0;
+    border: 2px solid black;
+    overflow: hidden;
+}
+
+// 每個小區塊
+.header-cart-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // flex-direction: column;
+    margin: 0 0 5px;
+    border-bottom: 2px solid #00b894;
+    padding: 5px 0 10px;
+    flex-wrap: wrap;
+    user-select: none;
+}
+
+.header-cart-image {
+    display: inline-block;
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+    max-height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #dfe6e9;
+    margin: 0 5px 0 0;
+}
+
+.header-cart-quantity {
+    // background-color: black;
+    // color: #fff;
+    display: block;
+    width: 50%;
+    text-align: right;
+    position: relative;
+
+    &:after {
+        content: 'x';
+        position: absolute;
+        right: -20%;
+    }
+}
+.header-cart-price {
+    // background-color: black;
+    // color: #fff;
+    display: block;
+    width: 50%;
+    text-align: center;
+    font-style: italic;
+    color: #636e72;
+}
+// 按下加入購物車時 icon 小動畫
+.header-cart-animate {
+    @include animate(cartAnimate, 1s, ease-in, 0s);
+    @include keyframes(cartAnimate) {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+// 顯示
+.header-cart-show {
+    @include animate(showCart, 3s, ease-in, 0s);
+    @include keyframes(showCart) {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    // overflow: scroll; // 新增區塊滑動效果
+}
+// 隱藏
+.header-cart-hidden {
+    opacity: 0;
+}
+
+// 切換主題文字
+.header-theme-text {
+    padding: 0 0 0 7px;
+}
+// ---- top bar end ----
+
+// 每個文字連結樣式
+.header-top-text {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition: color 0.3s ease-in-out;
 }
