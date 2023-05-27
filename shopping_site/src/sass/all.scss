@@ -14,14 +14,6 @@
 // @import 不用加上_檔案前墜、.scss副檔名。會預設去抓取同層的目錄檔案名。#載入有看順序#。請注意
 // @import url('https://fonts.googleapis.com/css2?family=Microsoft+JhengHei'); // 微軟正黑體
 
-@font-face {
-    font-family: 'Noto Sans TC';
-    src: url('./fonts/NotoSansTC-Light.otf') format('opentype');
-    src: url('https://ben0588.github.io/shopping_site/fonts/NotoSansTC-Light.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 // abstracts (_variable變數、_functions函式、_mixin自訂知識庫)
 // 使用 @mixin 建立名稱後 在對應處區使用 @include 引用用即可。也可以帶入變數去使用 ($items,$items)
 // @import 'abstracts/variables'
