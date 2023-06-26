@@ -1,10 +1,10 @@
-import { IoIosArrowDown } from 'react-icons/io'
-import { IoIosArrowUp } from 'react-icons/io'
-import { GrFormAdd } from 'react-icons/gr'
-import { useState } from 'react'
-import { NavLink, useNavigate, useOutletContext } from 'react-router-dom'
+import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowUp } from 'react-icons/io';
+import { GrFormAdd } from 'react-icons/gr';
+import { useState } from 'react';
+import { NavLink, useNavigate, useOutletContext } from 'react-router-dom';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 const MenuSidebar = styled.aside`
     // 控制手機板與桌機板顯示寬度
     width: ${(props) => (props.isOpen ? '50%' : '25%')};
@@ -13,9 +13,9 @@ const MenuSidebar = styled.aside`
     @media screen and (max-width: 568px) {
         display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     }
-`
+`;
 const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen, setMenuIsOpen, setIsGoToTop }) => {
-    const [click, setClick] = useState(null) // 控制點擊展開子菜單
+    const [click, setClick] = useState(null); // 控制點擊展開子菜單
 
     // 處理主類型展開顯示子類型按鈕
     const handleSidebarToggle = (index) => {
@@ -31,10 +31,10 @@ const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen
                 #4-4 此時對應的子目錄 不符合相同值，會把.open 屬性拿掉，變回height:0 的狀態
         */
         if (click === index) {
-            return setClick(null)
+            return setClick(null);
         }
-        setClick(index)
-    }
+        setClick(index);
+    };
 
     return (
         <MenuSidebar className='product-sidebar-container' isOpen={menuIsOpen}>
@@ -45,8 +45,8 @@ const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen
                         <NavLink
                             to=''
                             onClick={() => {
-                                handleProductAll && handleProductAll() // 回到首頁
-                                setMenuIsOpen && setMenuIsOpen(false) // 關閉選單
+                                handleProductAll && handleProductAll(); // 回到首頁
+                                setMenuIsOpen && setMenuIsOpen(false); // 關閉選單
                             }}
                         >
                             全部商品
@@ -58,7 +58,7 @@ const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen
                                 <button
                                     className={`product-sidebar-btn ${click === index ? 'sidebar-btn-active' : ''}`}
                                     onClick={(e) => {
-                                        handleSidebarToggle(index) // 此index影響下層顯示區塊
+                                        handleSidebarToggle(index); // 此index影響下層顯示區塊
                                     }}
                                 >
                                     {/* 取得按下時的參數，後續用來進行篩選 */}
@@ -66,8 +66,8 @@ const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen
                                     <NavLink
                                         to={`/product/?category=${item.category}`}
                                         onClick={() => {
-                                            setMenuIsOpen && setMenuIsOpen(false) // 開啟子項目
-                                            setIsGoToTop && setIsGoToTop(true) // 回到頂端
+                                            setMenuIsOpen && setMenuIsOpen(false); // 開啟子項目
+                                            setIsGoToTop && setIsGoToTop(true); // 回到頂端
                                         }}
                                     >
                                         {item.category}
@@ -95,21 +95,21 @@ const ProductSidebar = ({ sidebarList, subcategory, handleProductAll, menuIsOpen
                                                     color: isActive && item === subcategory ? '#00b894' : 'black',
                                                 })}
                                                 onClick={() => {
-                                                    setMenuIsOpen && setMenuIsOpen(false) // 開啟子項目
-                                                    setIsGoToTop && setIsGoToTop(true) // 回到頂端
+                                                    setMenuIsOpen && setMenuIsOpen(false); // 開啟子項目
+                                                    setIsGoToTop && setIsGoToTop(true); // 回到頂端
                                                 }}
                                             >
                                                 {item}
                                             </NavLink>
-                                        )
+                                        );
                                     })}
                                 </div>
                             </li>
-                        )
+                        );
                     })}
                 </ul>
             </nav>
         </MenuSidebar>
-    )
-}
-export default ProductSidebar
+    );
+};
+export default ProductSidebar;

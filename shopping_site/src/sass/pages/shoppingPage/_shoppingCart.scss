@@ -349,30 +349,30 @@
             font-weight: bolder;
         }
     }
-}
 
-// 結帳按鈕
-.shopping-payment-btn {
-    display: inline-block;
-    border: 2px solid #b2bec3;
-    padding: 7px 10px;
-    width: 100%;
-    max-width: 100px;
-    text-align: center;
-    background-color: #0a2240;
-    color: #fff;
-    font-weight: bolder;
-    transition: all 0.2s ease-in-out;
+    // 結帳按鈕
+    .shopping-payment-btn {
+        display: inline-block;
+        border: 2px solid #b2bec3;
+        padding: 7px 10px;
+        width: 100%;
+        max-width: 100px;
+        text-align: center;
+        background-color: #0a2240;
+        color: #fff;
+        font-weight: bolder;
+        transition: all 0.2s ease-in-out;
 
-    @include media568 {
-        width: 110%;
-    }
+        @include media568 {
+            width: 110%;
+        }
 
-    &:hover,
-    &:active {
-        background-color: #fff;
-        color: #0a2240;
-        border: 2px solid #0a2240;
+        &:hover,
+        &:active {
+            background-color: #fff;
+            color: #0a2240;
+            border: 2px solid #0a2240;
+        }
     }
 }
 
