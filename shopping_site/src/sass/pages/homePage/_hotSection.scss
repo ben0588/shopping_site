@@ -23,8 +23,8 @@
 
     .swiper {
         width: 240px;
-        // height: 350px;
-        height: auto;
+        height: 350px;
+        // height: 100%;
 
         @include media414 {
             width: 200px;
